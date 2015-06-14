@@ -39,7 +39,7 @@
 	<!-- Custom css -->
 	<link type="text/css" rel="stylesheet" href="css/layout.css">
 	<link type="text/css" id="colors" rel="stylesheet" href="css/light.css">
-	<link type="text/css" rel="stylesheet" href="css/coffee.css">
+	<link type="text/css" rel="stylesheet" href="css/s.css">
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 	<script src="js/modernizr-2.6.1.min.js"></script>
 	<!-- Favicons
@@ -113,12 +113,12 @@
 						<div class="col-sm-4">
 							<h4>Dirección:</h4>
 							<address>
-								Principe de Gales 6716<br/>
-								La Reina<br/>
+								José Pedro Alessandri 1242, Ñuñoa, <br/>
+								Santiago,Chile<br/>
 							</address>
 							<h4>Teléfono:</h4>
 							<address>
-								(569) 63421923<br/>
+								(56-2) 787 7211<br/>
 							</address>
 						</div>
 						<form method="post" action="js-plugin/neko-contact-ajax-plugin/php/form-handler.php" id="contactfrm" role="form">
@@ -141,13 +141,6 @@
 									<label for="comments">Comentarios</label>
 									<textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Ingrese su mensaje…" title="Por favor ingrese su mensaje (at least 10 characters)"></textarea>
 								</div>
-								<fieldset class="clearfix securityCheck">
-									<h3>Seguridad</h3>
-									<div class="form-group">
-										<img src="js-plugin/neko-contact-ajax-plugin/php/image.php" alt="Imagen de verificación"/>
-										<input class="required form-control"  id="verify" name="verify" type="text" >
-									</div>
-								</fieldset>
 							</div>                        
 							<div class="col-md-8 col-md-offset-4">
 								<div class="result"></div>
@@ -156,31 +149,17 @@
 						</form>
 					</div>
 				</div>
-				<div id="mapWrapper" class="mt30"></div>
+				<div class="mt30"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.34637601678!2d-70.5981719!3d-33.4663317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cfe9d9e8687d%3A0x9127c7d08cecba60!2sJos%C3%A9+Pedro+Alessandri+1242%2C+%C3%91u%C3%B1oa%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1434301754129" width="100%" height="100%" frameborder="0" style="border:0"></iframe></div>
 			</section>
 		</section>
 		<!-- content -->
 		<!-- footer -->
-		
+		<?php require_once("footer.php"); ?>
+		<!-- End footer -->
 		</div>
 		<!-- global wrapper -->
 	<!-- End Document 
 	================================================== -->
-	<script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-	<!-- third party plugins  -->
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
-	<!-- carousel -->
-	<script type="text/javascript" src="js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-	<!-- pop up -->
-	<script type="text/javascript" src="js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- form -->
-	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.form.js"></script>
-	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.validate.min.js"></script>
-	<!-- appear -->
-	<script type="text/javascript" src="js-plugin/appear/jquery.appear.js"></script>
-	<!-- Custom  -->
+	<?php require_once("js.php"); ?>
 </body>
 </html>

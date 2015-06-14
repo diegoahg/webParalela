@@ -41,7 +41,7 @@
 	<!-- Custom css -->
 	<link type="text/css" rel="stylesheet" href="css/layout.css">
 	<link type="text/css" id="colors" rel="stylesheet" href="css/colors.css">
-	<link type="text/css" rel="stylesheet" href="css/coffee.css">
+	<link type="text/css" rel="stylesheet" href="css/sea-green.css">
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 	<script src="js/modernizr-2.6.1.min.js"></script>
 	<!-- Favicons
@@ -422,79 +422,12 @@
 			</section>
 		<!-- content -->
 		<!-- footer -->
-		<footer>
-			<section id="mainFooter">
-				<div class="container" id="footer">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="footerWidget">
-								<img src="images/neko-logo.png" alt="latest Little Neko news" id="footerLogo">
-								<p><a href="http://www.little-neko.com" title="Little Neko, website template creation">Little Neko</a> is a web design and development studio. We build responsive HTML5 and CSS3 templates, integrating best web design practices and up-to-date web technologies to create great user experiences. We love what we do and we hope you do too! </p>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="footerWidget">
-
-								<h3>Little NEKO</h3>
-								<address>
-									<p> <i class="icon-location"></i>&nbsp;77 Mass. Ave., E14/E15<br>
-										Seattle, MA 02139-4307 USA <br>
-										<i class="icon-phone"></i>&nbsp;615.987.1234 <br>
-										<i class="icon-mail-alt"></i>&nbsp;<a href="mailto:little@little-neko.com">little@little-neko.com</a> </p>
-									</address>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="footerWidget">
-									<h3>Follow us, we are social</h3>
-									<ul class="socialNetwork">
-										<li><a href="#" class="tips" title="follow me on Facebook"><i class="icon-facebook-1 iconRounded"></i></a></li>
-										<li><a href="#" class="tips" title="follow me on Twitter"><i class="icon-twitter-bird iconRounded"></i></a></li>
-										<li><a href="#" class="tips" title="follow me on Google+"><i class="icon-gplus-1 iconRounded"></i></a></li>
-										<li><a href="#" class="tips" title="follow me on Linkedin"><i class="icon-linkedin-1 iconRounded"></i></a></li>
-										<li><a href="#" class="tips" title="follow me on Dribble"><i class="icon-dribbble iconRounded"></i></a></li>
-									</ul>     
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</section>
-				<section  id="footerRights">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<p>Copyright © 2014 <a href="http://www.little-neko.com" target="blank">Little NEKO</a> / All rights reserved.</p>
-							</div>
-
-						</div>
-					</div>
-				</section>
-			</footer>
-			<!-- End footer -->
+		<?php require_once("footer.php"); ?>
+		<!-- End footer -->
 		</div>
 		<!-- global wrapper -->
 	<!-- End Document 
 	================================================== -->
-	<script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-	<!-- third party plugins  -->
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
-	<!-- carousel -->
-	<script type="text/javascript" src="js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-	<!-- pop up -->
-	<script type="text/javascript" src="js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- flex slider -->
-	<script type="text/javascript" src="js-plugin/flexslider/jquery.flexslider-min.js"></script>
-	<!-- isotope -->
-	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.min.js"></script>
-	<!-- sharrre -->
-	<script type="text/javascript" src="js-plugin/jquery.sharrre-1.3.4/jquery.sharrre-1.3.4.min.js"></script>
-	<!-- appear -->
-	<script type="text/javascript" src="js-plugin/appear/jquery.appear.js"></script>	
-	<!-- Custom  -->
-	<script type="text/javascript" src="js/custom.js"></script>
+	<?php require_once("js.php"); ?>
 </body>
 </html>

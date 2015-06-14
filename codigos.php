@@ -41,7 +41,7 @@
 	<!-- Custom css -->
 	<link type="text/css" rel="stylesheet" href="css/layout.css">
 	<link type="text/css" id="colors" rel="stylesheet" href="css/colors.css">
-	<link type="text/css" rel="stylesheet" href="css/coffee.css">
+	<link type="text/css" rel="stylesheet" href="css/sea-green.css">
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 	<script src="js/modernizr-2.6.1.min.js"></script>
 	<!-- Favicons
@@ -104,13 +104,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>Portfolio Masonry</h1>
-							<p>Same ol' boring pinterest like portfolio</p>
+							<h1>Codigos</h1>
+							<p>Computación Paralela Primer Semestre 2015</p>
 							
 							<ul class="breadcrumb visible-md visible-lg">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="portfolio-masonery.html">Portfolio</a></li>
-								<li class="active">Portfolio Masonry</li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="codigos.php">Codigos</a></li>
 							</ul>
 						</div>
 					</div>
@@ -120,41 +119,24 @@
 				<section class="pt30 pb30"> 
 					<div class="container clearfix">
 						<div class="row">
-							<nav id="filter" class="span12 text-center">
-								<div class="btn-group">
-									<a href="" class="btn btn-default" data-filter="*">All</a>
-									<a href="" class="btn btn-default" data-filter=".graphics">Graphics</a>
-									<a href="" class="btn btn-default" data-filter=".women">Women</a>
-									<a href="" class="btn btn-default" data-filter=".cats">Cats</a>
-								</div>
-							</nav>
 							<div class="portfolio-items  isotopeWrapper clearfix imgHover" id="3">
 								<!-- portfolio item -->
 								<article class="col-sm-4 isotopeItem women">
 									<div class="pinBox">
-										<img alt="" src="images/portfolio/vign6.jpg" class="img-responsive">
+										<img alt="" src="images/portfolio/percolacion.png" class="img-responsive">
 										<div class="mediaHover">
 											<div class="mask"></div>
 											<div class="iconLinks"> 
-												<a href="portfolio-project-fullwidth-image.html" title="link">
-													<i class="icon-picture iconRounded iconMedium"></i>
+												<a href="percolacion.php" title="link">
+													<i class="icon-link iconRounded iconMedium"></i>
 													<span>link</span>
-												</a> 
-												<a href="images/portfolio/zoom6.jpg" class="image-link" title="Full width image" >
-													<i class="icon-search iconRounded iconMedium"></i>
-													<span>zoom</span>
-												</a> 
+												</a>
 											</div>
 										</div>
-										<ul class="pinInfo">
-											<li><a href=""><i class="icon-eye"></i>220</a></li>
-											<li><a href=""><i class="icon-comment"></i>3</a></li>
-											<li><a href=""><i class="icon-heart-filled"></i>26</a></li>
-										</ul>
 										<section class="boxContent">
-											<h3>Full width image</h3>
-											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br />
-												<a href="portfolio-project-fullwidth-image.html" class="moreLink">&rarr; read more</a>
+											<h3>Percolación</h3>
+											<p> la percolación se refiere al paso lento de fluidos a través de materiales porosos. Ejemplos de este proceso son la filtración y la lixiviación. <br />
+												<!--<a href="percolacion.php" class="moreLink">&rarr; read more</a>-->
 											</p>
 										</section>
 									</div>
@@ -163,29 +145,20 @@
 								<!-- portfolio item -->
 								<article class="col-sm-4 isotopeItem cats">
 									<div class="pinBox">
-										<img alt="" src="images/portfolio/vign1.jpg" class="img-responsive">
+										<img alt="" src="images/portfolio/fasta.png" class="img-responsive">
 										<div class="mediaHover">
 											<div class="mask"></div>
 											<div class="iconLinks"> 
-												<a href="portfolio-project-fullwidth-video.html" title="link" class="portfolioSheet sizer">
-													<i class="icon-videocam iconRounded iconMedium"></i>
+												<a href="fasta.php" title="link" class="portfolioSheet sizer">
+													<i class="icon-link iconRounded iconMedium"></i>
 													<span>link</span>
-												</a> 
-												<a href="http://www.youtube.com/watch?v=aqrtF7L86NQ" class="image-iframe" title="Video Popup" >
-													<i class="icon-search iconRounded iconMedium"></i>
-													<span>video</span>
-												</a> 
+												</a>
 											</div>   
 										</div>
-										<ul class="pinInfo">
-											<li><a href=""><i class="icon-eye"></i>150</a></li>
-											<li><a href=""><i class="icon-comment"></i>4</a></li>
-											<li><a href=""><i class="icon-heart-filled"></i>32</a></li>
-										</ul>
 										<section class="boxContent">
-											<h3>Video YouTube</h3>
-											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-												<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a> </p>
+											<h3>Fasta</h3>
+											<p> El paquete actual de FASTA incluye programas para búsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleotidos. <br>
+												<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a> </p>-->
 											</section>
 										</div>
 									</article>
@@ -193,219 +166,25 @@
 									<!-- portfolio item -->
 									<article class="col-sm-4 isotopeItem graphics">
 										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign7.jpg" class="img-responsive">
+											<img alt="" src="images/portfolio/torah.png" class="img-responsive">
 											<div class="mediaHover">
 												<div class="mask"></div>
 												<div class="iconLinks"> 
-													<a href="portfolio-project-fullwidth-video.html" title="link">
-														<i class="icon-videocam iconRounded iconMedium"></i>
+													<a href="biblia.php" title="link">
+														<i class="icon-link iconRounded iconMedium"></i>
 														<span>link</span>
-													</a> 
-													<a href="http://vimeo.com/ondemand/5335/75660130" class="image-iframe" title="Video Popup" >
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>video</span>
-													</a> 
+													</a>
 												</div>
 											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>1520</a></li>
-												<li><a href=""><i class="icon-comment"></i>24</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>158</a></li>
-											</ul>
 											<section class="boxContent">
-												<h3>Video Vimeo</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-													<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>
+												<h3>Torah</h3>
+												<p>El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro.<br>
+													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
 												</p>
 											</section>
 										</div>
 									</article>
 									<!-- portfolio item -->
-									<!-- portfolio item -->
-									<article class="col-sm-4 isotopeItem cats">
-										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign3.jpg" class="img-responsive">
-											<div class="mediaHover">
-												<div class="mask"></div>
-												<div class="iconLinks"> 
-													<a href="portfolio-project-fullwidth-carousel.html" title="link">
-														<i class="icon-camera iconRounded iconMedium"></i>
-														<span>link</span>
-													</a> 
-													<a href="images/portfolio/carousel-1.jpg" class="image-link" title="Zoom" data-gallery="images/portfolio/carousel-2.jpg,images/portfolio/carousel-3.jpg">
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>gallery</span>
-													</a> 
-												</div>
-											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>145</a></li>
-												<li><a href=""><i class="icon-comment"></i>56</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>34</a></li>
-											</ul>
-											<section class="boxContent">
-												<h3>Gallery</h3>
-												<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-													<a href="portfolio-project-fullwidth-carousel.html" class="moreLink">&rarr; read more</a>
-												</p>
-											</section>
-										</div>
-									</article>
-									<!-- portfolio item -->
-									<!-- portfolio item -->
-									<article class="col-sm-4 isotopeItem cats">
-										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign2.jpg" class="img-responsive">
-											<div class="mediaHover">
-												<div class="mask"></div>
-												<div class="iconLinks">
-													<a href="portfolio-project-fullwidth-carousel.html" title="link">
-														<i class="icon-picture iconRounded iconMedium"></i>
-														<span>link</span>
-													</a>
-													<a href="images/portfolio/zoom2.jpg" class="image-link" title="Gallery Popup">
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>zoom</span>
-													</a>
-												</div>
-											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>874</a></li>
-												<li><a href=""><i class="icon-comment"></i>52</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>126</a></li>
-											</ul>
-											<section class="boxContent">
-												<h3>Lorem ipsum dolor sit amet</h3>
-												<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-													<a href="#" class="moreLink">&rarr; read more</a>
-												</p>
-											</section>
-										</div>
-									</article>
-									<!-- portfolio item -->
-									<!-- portfolio item -->
-									<article class="col-sm-4 isotopeItem women">
-										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign4.jpg" class="img-responsive">
-											<div class="mediaHover">
-												<div class="mask"></div>
-												<div class="iconLinks">
-													<a href="portfolio-project-fullwidth-image.html" title="link">
-														<i class="icon-picture iconRounded iconMedium"></i>
-														<span>link</span>
-													</a>
-													<a href="images/portfolio/zoom4.jpg" class="image-link" title="Zoom">
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>zoom</span>
-													</a>
-												</div>
-											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>220</a></li>
-												<li><a href=""><i class="icon-comment"></i>3</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>26</a></li>
-											</ul>
-											<section class="boxContent">
-												<h3>Lorem ipsum dolor sit amet</h3>
-												<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-													<a href="#" class="moreLink">&rarr; read more</a>
-												</p>
-											</section>
-										</div>
-									</article>
-									<!-- portfolio item -->
-									<!-- portfolio item -->
-									<article class="col-sm-4 isotopeItem graphics">
-										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign8.jpg" class="img-responsive">
-											<div class="mediaHover">
-												<div class="mask"></div>
-												<div class="iconLinks">
-													<a href="portfolio-project-fullwidth-image.html" title="link">
-														<i class="icon-picture iconRounded iconMedium"></i>
-														<span>link</span>
-													</a>
-													<a href="images/portfolio/zoom8.jpg" class="image-link" title="Zoom" >
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>zoom</span>
-													</a>
-												</div>
-											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>354</a></li>
-												<li><a href=""><i class="icon-comment"></i>31</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>216</a></li>
-											</ul>
-											<section class="boxContent">
-												<h3>Lorem ipsum dolor sit amet</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat.<br />
-													<a href="#" class="moreLink">&rarr; read more</a>
-												</p>
-											</section>
-										</div>
-									</article>
-									<!-- portfolio item -->
-									<!-- portfolio item -->
-									<article class="col-sm-4 isotopeItem women">
-										<div class="pinBox">
-											<img alt="" src="images/portfolio/vign5.jpg" class="img-responsive">
-											<div class="mediaHover">
-												<div class="mask"></div>
-												<div class="iconLinks">
-													<a href="portfolio-project-fullwidth-image.html" title="link">
-														<i class="icon-picture iconRounded iconMedium"></i>
-														<span>link</span>
-													</a>
-													<a href="images/portfolio/zoom5.jpg" class="image-link" title="Zoom" >
-														<i class="icon-search iconRounded iconMedium"></i>
-														<span>zoom</span>
-													</a>
-												</div>
-											</div>
-											<ul class="pinInfo">
-												<li><a href=""><i class="icon-eye"></i>420</a></li>
-												<li><a href=""><i class="icon-comment"></i>48</a></li>
-												<li><a href=""><i class="icon-heart-filled"></i>25</a></li>
-											</ul>
-											<section class="boxContent">
-												<h3>Lorem ipsum dolor sit amet</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat.<br />
-													<a href="#" class="moreLink">&rarr; read more</a> </p>
-												</section>
-											</div>
-										</article>
-										<!-- portfolio item -->
-										<!-- portfolio item -->
-										<article class="col-sm-4 isotopeItem graphics">
-											<div class="pinBox">
-												<img alt="" src="images/portfolio/vign9.jpg" class="img-responsive">
-												<div class="mediaHover">
-													<div class="mask"></div>
-													<div class="iconLinks">
-														<a href="portfolio-project-fullwidth-carousel.html" title="link">
-															<i class="icon-camera iconRounded iconMedium"></i>
-															<span>link</span>
-														</a>
-														<a href="images/portfolio/zoom9.jpg" class="image-link" title="Zoom">
-															<i class="icon-search iconRounded iconMedium"></i>
-															<span>zoom</span>
-														</a>
-													</div>
-												</div>
-												<ul class="pinInfo">
-													<li><a href=""><i class="icon-eye"></i>789</a></li>
-													<li><a href=""><i class="icon-comment"></i>120</a></li>
-													<li><a href=""><i class="icon-heart-filled"></i>225</a></li>
-												</ul>
-												<section class="boxContent">
-													<h3>Lorem ipsum dolor sit amet</h3>
-													<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. <br>
-														<a href="#" class="moreLink">&rarr; read more</a>
-													</p>
-												</section>
-											</div>
-										</article>
-										<!-- portfolio item -->
 									</div>
 								</div>
 							</div>
@@ -414,78 +193,12 @@
 				</section>
 				<!-- content -->
 				<!-- footer -->
-				<footer id="footerWrapper">
-					<section id="mainFooter">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="footerWidget">
-										<img src="images/neko-logo.png" alt="latest Little Neko news" id="footerLogo">
-										<p><a href="http://www.little-neko.com" title="Little Neko, website template creation">Little Neko</a> is a web design and development studio. We build responsive HTML5 and CSS3 templates, integrating best web design practices and up-to-date web technologies to create great user experiences. We love what we do and we hope you do too! </p>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="footerWidget">
-
-										<h3>Little NEKO</h3>
-										<address>
-											<p> <i class="icon-location"></i>&nbsp;77 Mass. Ave., E14/E15<br>
-												Seattle, MA 02139-4307 USA <br>
-												<i class="icon-phone"></i>&nbsp;615.987.1234 <br>
-												<i class="icon-mail-alt"></i>&nbsp;<a href="mailto:little@little-neko.com">little@little-neko.com</a> </p>
-											</address>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="footerWidget">
-											<h3>Follow us, we are social</h3>
-											<ul class="socialNetwork">
-												<li><a href="#" class="tips" title="follow me on Facebook"><i class="icon-facebook-1 iconRounded"></i></a></li>
-												<li><a href="#" class="tips" title="follow me on Twitter"><i class="icon-twitter-bird iconRounded"></i></a></li>
-												<li><a href="#" class="tips" title="follow me on Google+"><i class="icon-gplus-1 iconRounded"></i></a></li>
-												<li><a href="#" class="tips" title="follow me on Linkedin"><i class="icon-linkedin-1 iconRounded"></i></a></li>
-												<li><a href="#" class="tips" title="follow me on Dribble"><i class="icon-dribbble iconRounded"></i></a></li>
-											</ul>     
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<section  id="footerRights">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-12">
-										<p>Copyright © 2014 <a href="http://www.little-neko.com" target="blank">Little NEKO</a> / All rights reserved.</p>
-									</div>
-								</div>
-							</div>
-						</section>
-					</footer>
+				<?php require_once("footer.php"); ?>
 					<!-- End footer -->
 				</div>
 				<!-- global wrapper -->
 	<!-- End Document 
 	================================================== -->
-	<script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-	<!-- third party plugins  -->
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
-	<!-- carousel -->
-	<script type="text/javascript" src="js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-	<!-- pop up -->
-	<script type="text/javascript" src="js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- flex slider -->
-	<script type="text/javascript" src="js-plugin/flexslider/jquery.flexslider-min.js"></script>
-	<!-- isotope -->
-	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.sloppy-masonry.min.js"></script>
-	<!-- sharrre -->
-	<script type="text/javascript" src="js-plugin/jquery.sharrre-1.3.4/jquery.sharrre-1.3.4.min.js"></script>
-	<!-- appear -->
-	<script type="text/javascript" src="js-plugin/appear/jquery.appear.js"></script>	
-	<!-- Custom  -->
-	<script type="text/javascript" src="js/custom.js"></script>
+	<?php require_once("js.php"); ?>
 </body>
 </html>

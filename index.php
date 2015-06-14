@@ -5,51 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-<head>
-	<!-- Basic Page Needs
-	================================================== -->
-	<meta charset="utf-8">
-	<title>Plataforma de Servicios</title>
-	<meta name="description" content="SEATTLE is a One Page Bootstrap 3 Premium website Template, using nice Paralax effect, HTML5, CSS3 and Twitter Bootstrap 3">
-	<meta name="author" content="Little NEKO">
-	<!-- Mobile Specific Metas
-	================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- CSS
-	================================================== -->
-	<!-- Bootstrap  -->
-	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<!-- web font  -->
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-	<!-- plugin css  -->
-	<link rel="stylesheet" type="text/css" href="js-plugin/animation-framework/animate.css" />
-	<!-- Pop up-->
-	<link rel="stylesheet" type="text/css" href="js-plugin/magnific-popup/magnific-popup.css" />
-	<!-- Flex slider-->
-	<link rel="stylesheet" type="text/css" href="js-plugin/flexslider/flexslider.css" />
-	<!-- Owl carousel-->
-	<link rel="stylesheet" href="js-plugin/owl.carousel/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="js-plugin/owl.carousel/owl-carousel/owl.transitions.css">
-	<link rel="stylesheet" href="js-plugin/owl.carousel/owl-carousel/owl.theme.css">
-	<!-- icon fonts -->
-	<link type="text/css" rel="stylesheet" href="font-icons/custom-icons/css/custom-icons.css">
-	<link type="text/css" rel="stylesheet" href="font-icons/custom-icons/css/custom-icons-ie7.css">
-	<!-- nekoAnim-->
-	<link rel="stylesheet" type="text/css" href="js-plugin/appear/nekoAnim.css">
-	<!-- Custom css -->
-	<link type="text/css" rel="stylesheet" href="css/layout.css">
-	<link type="text/css" id="colors" rel="stylesheet" href="css/colors.css">
-	<link type="text/css" rel="stylesheet" href="css/coffee.css">
-	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-	<script src="js/modernizr-2.6.1.min.js"></script>
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
-</head>
+<?php require_once("head.php"); ?>
 <body class="activateAppearAnimation">
 	<!-- Primary Page Layout 
 	================================================== -->
@@ -69,7 +25,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- Logo -->
-							<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>
+							<!--<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>-->
 						</div>
 						<div class="collapse navbar-collapse" id="mainMenu">
 							<!-- Main navigation -->
@@ -87,7 +43,7 @@
 									</ul>
 								</li>
 								<li class="sep"></li>
-								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contact</a></li>
+								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -118,47 +74,47 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 text-center mb30">
-									<h1>Our services</h1>
-									<h2 class="subTitle">We are doing a couple of things you might be interested in</h2>
+									<h1>Nuestros Servicios</h1>
+									<h2 class="subTitle">Ejecutamos codigos en pyhton de panera paralela para ejecutar mas rapido sus requerimientos</h2>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="featureBox posLeft">
-										<i class="icon-heart iconBig iconRounded"></i>
+										<i class="icon-cog-alt iconBig iconRounded"></i>
 										<div class="boxContent">
-											<h2>Clean design</h2>
-											<p>Elegant layouts that help you organize your content in the best way</p>
+											<h2>Escalabilidad</h2>
+											<p>Trabajamos con amplia cantidad de procesadores</p>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="featureBox">
-										<i class="icon-tablet iconBig iconRounded"></i>
+										<i class=" icon-html5 iconBig iconRounded"></i>
 										<div class="boxContent">
 											<h2>HTML5 &amp; CSS3</h2>
-											<p>Built with modern technologies like HTML5 and CSS3, SEO optimized</p>
+											<p>Diseño basado en el framework Bootstrap</p>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="featureBox posLeft">
-										<i class="icon-beaker iconBig iconRounded"></i>
+										<i class="icon-mail iconBig iconRounded"></i>
 										<div class="boxContent">
-											<h2>Responsive design</h2>
-											<p>Compatible with various desktop, tablet, and mobile devices.</p>
+											<h2>Respuestas Por Correo</h2>
+											<p>Procesamos tus requerimientos y cuando este listo te lo enviamos por correo</p>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="featureBox">
-										<i class="icon-edit iconBig iconRounded"></i>
+										<i class="icon-linux iconBig iconRounded"></i>
 										<div class="boxContent">
-											<h2>Easy Customization</h2>
-											<p>Clear code and documentation, base on Bootstrap 3</p>
+											<h2>Montado en Linux</h2>
+											<p>Plantaforma montada en la distriución de Linux Ubuntu 14.04</p>
 										</div>
 									</div>
 								</div>							
@@ -172,17 +128,12 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<img src="images/theme-pics/screen-mobiles.png" alt="SEATTLE, mobile first template" class="img-responsive" />
+									<img src="images/theme-pics/percolacion.png" alt="paralela 2015" class="img-responsive" />
 								</div>
 								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<h1>Mobile first by design</h1>
+									<h1>PERCOLACIÓN</h1>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+										La percolación es el momento en el cual un material puede llegar desde un extremo a otro, gracias a este concepto de la física/química que se está explotando hoy en día, se logran tener aproximaciones en otros problemas, como por ejemplo, propagación de bacterias, propagación de incendios forestales, cromatizacion de líquidos, entre varios más.
 									</p>
 								</div>
 							</div>
@@ -194,22 +145,35 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<h1>Easy to use</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									<h1>FASTA</h1>
+									<p>
+										úsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleotidos.
 									</p>
 								</div>
 								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<img src="images/theme-pics/screen-desktop.png" alt="flat mobile devices" class="img-responsive"/>
+									<img src="images/theme-pics/fasta.png" alt="flat mobile devices" class="img-responsive"/>
 								</div>
 							</div>
 						</div>
 					</section>
 					<!-- section 2 -->
+					<!-- section 3 -->
+					<section class="color1">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<img src="images/theme-pics/torah.png" alt="paralela 2015" class="img-responsive" />
+								</div>
+								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<h1>TORAH</h1>
+									<p>
+										El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro. Estos códigos son legibles gracias a unas reglas de codificación que únicamente pueden aplicarse al texto en hebreo antiguo utilizando programas informáticos. El libro El código secreto de la Biblia de Michael Drosnin, publicado en 1997, popularizó ésta teoría.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 3 -->
 					<!-- parallax testimonial --> 
 					<section id="paralaxSlice3" data-stellar-background-ratio="0.5">
 						<div class="maskParent">
@@ -220,16 +184,20 @@
 										<div class="owl-carousel nekoDataOwl" data-neko_items="1" data-neko_singleitem="true" data-neko_paginationnumbers="true">
 
 											<div class="item">
-												<img src="images/clients/client1.jpg" class="img-circle mb15" alt="client">
-												<blockquote> When you are courting a nice girl an hour seems like a second.<br /> When you sit on a red-hot cinder a second seems like an hour. That's relativity.<br/><small>Albert Einstein </small></blockquote>
+												<img src="images/clients/einstein.jpg" class="img-circle mb15" alt="client">
+												<blockquote>Locura es hacer la misma cosa una y otra vez esperando obtener diferentes resultados.<br/><small>Albert Einstein </small></blockquote>
 											</div>
 											<div class="item">
-												<img src="images/clients/client2.jpg" class="img-circle mb15" alt="client">
-												<blockquote>We shall defend our island, whatever the cost may be, we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender.<br/><small>Winston Churchill</small></blockquote>
+												<img src="images/clients/zuckerberg.jpg" class="img-circle mb15" alt="client">
+												<blockquote>El mayor riesgo es no correr ningún riesgo. En un mundo que cambia muy rápidamente, la única estrategia que garantiza fallar es no correr riesgos.<br/><small>Marck Zuckerber</small></blockquote>
 											</div>
 											<div class="item">
-												<img src="images/clients/client3.jpg" class="img-circle mb15" alt="client">
-												<blockquote>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition.<br/><small>Steve Jobs</small></blockquote>
+												<img src="images/clients/howking.jpg" class="img-circle mb15" alt="client">
+												<blockquote>El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento.<br/><small>Stephen Hawking</small></blockquote>
+											</div>
+											<div class="item">
+												<img src="images/clients/jobs.jpg" class="img-circle mb15" alt="client">
+												<blockquote>Pienso que si haces algo y resulta ser una buena idea, entonces debes hacer otras cosas increíbles, no lo pienses mucho tiempo. Sólo descubre qué es lo que sigue.<br/><small>Steve Jobs</small></blockquote>
 											</div>
 										</div>
 									</div>
@@ -237,92 +205,125 @@
 							</div>
 						</div>
 					</section>
+
 					<!-- parallax testimonial --> 
 					<!-- services and skills -->
 					<section class="mt30 mb30">
 						<div class="container">
-							<div class="row">
-								<div class="col-md-12 text-center mb40" data-nekoanim="fadeInUp" data-nekodelay="100">
-									<h1>We love you</h1>
-									<h2 class="subTitle">Drop us a line</h2>
+							<!-- team -->
+							<div class="row team mt30 mb30">
+								<div class="col-sm-12">
+									<h2>Nuestro Equipo </h2>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent text-center">
+											<h3>Diego Hernández García</h3>
+											<p>Gerente General</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-2.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent text-center">
+											<h3>Roberto Oñate Piedras</h3>
+											<p>SubGerente General</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-3.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent  text-center">
+											<h3>Sergio Abarca Flores</h3>
+											<p>Jefe Área Percolación</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Claudio Piña (SA)</h3>
+											<p>Desarrollador Área Percolación</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Rosa González Soto</h3>
+											<p>Documentador Área Percolación</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Carlos Guerrero Urbina</h3>
+											<p>Jefe Área Fasta</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Daniel Gutierrezn Pizarro</h3>
+											<p>Desarrollador Área Fasta</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent text-center">
+											<h3>Rodrigo Arratia (SA)</h3>
+											<p>Documentador Área Fasta</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-2.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent text-center">
+											<h3>Manuel Venegas Solis</h3>
+											<p>Jefe Área Torah</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-3.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent  text-center">
+											<h3>Miguel Nuñez Gajardo</h3>
+											<p> Masajista/Presidente del Sindicato</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Rodrigo Reyes (SA)</h3>
+											<p>Documentador Área Torah</p>
+										</div>
+									</article>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-6" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<h2>Why choose us?</h2>
-									<!-- accordion -->
-									<div class="panel-group" id="accordion">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-														<i class="icon-location"></i>Consulting
-													</a>
-												</h4>
-											</div>
-											<div id="collapseOne" class="panel-collapse in">
-												<div class="panel-body">
-													Pursuing this route will enable us to efficiently standardize the targeted, tactical and nimble attitude; this is why a visionary emotional intelligence enhances target pre-plans ahead of schedule. Core meeting and requirement strategically structure a measure, whereas the enablers generate cornerstones reaped from our double-digit improvement.
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-														<i class="icon-edit"></i>Graphic design
-													</a>
-												</h4>
-											</div>
-											<div id="collapseTwo" class="panel-collapse collapse">
-												<div class="panel-body">
-													Pursuing this route will enable us to efficiently standardize the targeted, tactical and nimble attitude; this is why a visionary emotional intelligence enhances target pre-plans ahead of schedule. Core meeting and requirement strategically structure a measure, whereas the enablers generate cornerstones reaped from our double-digit improvement.
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-														<i class="icon-search"></i>Cooking
-													</a>
-												</h4>
-											</div>
-											<div id="collapseThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													Pursuing this route will enable us to efficiently standardize the targeted, tactical and nimble attitude; this is why a visionary emotional intelligence enhances target pre-plans ahead of schedule. Core meeting and requirement strategically structure a measure, whereas the enablers generate cornerstones reaped from our double-digit improvement.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- accordion -->
-								<!-- skills -->
-								<div class="col-sm-6" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<h2>Our skills</h2>
-									<h4>Intermandated relationships</h4>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-											<span>50%</span>
-										</div>
-									</div><h4>Goal-oriented clouds</h4>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%;">
-											<span>80%</span>
-										</div>
-									</div>
-									<h4>Corporate bullshit</h4>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-											<span>100%</span>
-										</div>
-									</div>
-								</div>
-							</div>
+
+							<!-- team -->
+
 						</div>
 					</section>
+
 					<!-- services and skills -->
 					<!-- call to action -->
+					<!--
 					<section class="pt40 pb40">
 						<div class="container">
 							<div class="row">
@@ -344,88 +345,18 @@
 								</div>
 							</div>
 						</div>
-					</section>
+					</section>-->
 					<!-- call to action -->
 				</section>
 			</section>
 			<!-- content -->
 			<!-- footer -->
-			<footer id="footerWrapper">
-				<section id="mainFooter" data-nekoanim="fadeInUp" data-nekodelay="200">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="footerWidget">
-									<img src="images/neko-logo.png" alt="latest Little Neko news" id="footerLogo">
-									<p><a href="http://www.little-neko.com" title="Little Neko, website template creation">Little Neko</a> is a web design and development studio. We build responsive HTML5 and CSS3 templates, integrating best web design practices and up-to-date web technologies to create great user experiences. We love what we do and we hope you do too! </p>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="footerWidget">
-									<h3>Little NEKO</h3>
-									<address>
-										<p> <i class="icon-location"></i>&nbsp;77 Mass. Ave., E14/E15<br>
-											Seattle, MA 02139-4307 USA <br>
-											<i class="icon-phone"></i>&nbsp;615.987.1234 <br>
-											<i class="icon-mail-alt"></i>&nbsp;<a href="mailto:little@little-neko.com">little@little-neko.com</a> </p>
-										</address>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="footerWidget">
-										<h3>Follow us, we are social</h3>
-										<ul class="socialNetwork">
-											<li><a href="#" class="tips" title="follow me on Facebook"><i class="icon-facebook-1 iconRounded"></i></a></li>
-											<li><a href="#" class="tips" title="follow me on Twitter"><i class="icon-twitter-bird iconRounded"></i></a></li>
-											<li><a href="#" class="tips" title="follow me on Google+"><i class="icon-gplus-1 iconRounded"></i></a></li>
-											<li><a href="#" class="tips" title="follow me on Linkedin"><i class="icon-linkedin-1 iconRounded"></i></a></li>
-											<li><a href="#" class="tips" title="follow me on Dribble"><i class="icon-dribbble iconRounded"></i></a></li>
-										</ul>     
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section  id="footerRights">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<p>Copyright © 2014 <a href="http://www.little-neko.com" target="blank">Little NEKO</a> / All rights reserved.</p>
-								</div>
-
-							</div>
-						</div>
-					</section>
-				</footer>
-				<!-- End footer -->
+			<?php require_once("footer.php"); ?>
+			<!-- End footer -->
 			</div>
 			<!-- global wrapper -->
 	<!-- End Document 
 	================================================== -->
-	<script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-	<!-- third party plugins  -->
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
-	<!-- carousel -->
-	<script type="text/javascript" src="js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-	<!-- pop up -->
-	<script type="text/javascript" src="js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<!-- flex slider -->
-	<script type="text/javascript" src="js-plugin/flexslider/jquery.flexslider-min.js"></script>
-	<!-- isotope -->
-	<script type="text/javascript" src="js-plugin/isotope/jquery.isotope.min.js"></script>
-	<!-- form -->
-	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.form.js"></script>
-	<script type="text/javascript" src="js-plugin/neko-contact-ajax-plugin/js/jquery.validate.min.js"></script>
-	<!-- paraallax -->
-	<script type="text/javascript" src="js-plugin/parallax/js/jquery.stellar.min.js"></script>
-	<script type="text/javascript" src="js-plugin/parallax/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-	<script type="text/javascript" src="js-plugin/parallax/js/jquery.localscroll-1.2.7-min.js"></script>
-	<!-- appear -->
-	<script type="text/javascript" src="js-plugin/appear/jquery.appear.js"></script>
-	<!-- Custom  -->
-	<script type="text/javascript" src="js/custom.js"></script>
+	<?php require_once("js.php"); ?>
 </body>
 </html>
