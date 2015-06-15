@@ -25,7 +25,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- Logo -->
-							<!--<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>-->
+							<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>
 						</div>
 						<div class="collapse navbar-collapse" id="mainMenu">
 							<!-- Main navigation -->
@@ -246,7 +246,7 @@
 									<article>
 										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
 										<div class="boxContent">
-											<h3>Claudio Piña (SA)</h3>
+											<h3>Claudio Piña Novoa</h3>
 											<p>Desarrollador Área Percolación</p>
 										</div>
 									</article>
@@ -273,8 +273,8 @@
 									<article>
 										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
 										<div class="boxContent">
-											<h3>Daniel Gutierrezn Pizarro</h3>
-											<p>Desarrollador Área Fasta</p>
+											<h3>Daniel Gutierrez Pizarro</h3>
+											<p>Documentador Área Fasta</p>
 										</div>
 									</article>
 								</div>
@@ -282,8 +282,8 @@
 									<article>
 										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
 										<div class="boxContent text-center">
-											<h3>Rodrigo Arratia (SA)</h3>
-											<p>Documentador Área Fasta</p>
+											<h3>Rodrigo Arratia Allende</h3>
+											<p>Desarrollador Área Fasta</p>
 										</div>
 									</article>
 								</div>
@@ -301,7 +301,7 @@
 										<div><img src="images/team/team-corporate-3.jpg" alt="" class="img-responsive"></div>
 										<div class="boxContent  text-center">
 											<h3>Miguel Nuñez Gajardo</h3>
-											<p> Masajista/Presidente del Sindicato</p>
+											<p>Desarrollador Área Torah</p>
 										</div>
 									</article>
 								</div>
@@ -309,7 +309,7 @@
 									<article>
 										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
 										<div class="boxContent">
-											<h3>Rodrigo Reyes (SA)</h3>
+											<h3>Rodrigo Reyes Silva</h3>
 											<p>Documentador Área Torah</p>
 										</div>
 									</article>
