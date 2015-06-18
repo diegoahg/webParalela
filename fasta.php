@@ -105,6 +105,7 @@
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<form method="post" action="controlador.php" id="postComment" role="form"  enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pf">
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
