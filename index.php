@@ -25,7 +25,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- Logo -->
-							<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>
+							<a class="navbar-brand" href="index.php"><img src="images/main-logo.png" alt="SEATTLE website template"/></a>
 						</div>
 						<div class="collapse navbar-collapse" id="mainMenu">
 							<!-- Main navigation -->
