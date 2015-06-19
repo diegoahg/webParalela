@@ -10,7 +10,7 @@ $output = array(); //contendrá cada linea salida desde la aplicación en Python
 /*Usando exec, pero agregando le como parametro además del comando para  ejecutar la aplicación un arreglo; tendriamos la salida de nuestra aplicación en dicho arreglo; así que recorriendo e imprimiendo cada subindice del arreglo se mostraria la salida de nuestra aplicación en python utilizando php
 */
 $alg = $_POST["algoritmo"];
-$mail = "@fasta";
+$mail = "@Biblia";
 $uno = "1";
 $dos = "1";
 $tres = "1";
