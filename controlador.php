@@ -16,6 +16,37 @@ $dos = "1";
 $tres = "1";
 $cuatro = "1";
 $comando = "python /mpi/VARIOS/plataforma.py ".$alg." ".$mail." ".$uno." ".$dos." ".$tres." ".$cuatro;
-exec($comando, $output);
+switch($_POST["algoritmo"]){
+	case "-pp":
+		$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python ";
+		exec($comando);
+		break;
+	case "-pf":
+		$uploaddir = '/var/www/html/webParalela/FASTA/';
+		$uploadfile = $uploaddir . basename($_FILES['documento']['name']);
+
+		echo '<pre>';
+		if (move_uploaded_file($_FILES['documento']['tmp_name'], $uploadfile)) {
+		    echo "El archivo es válido y fue cargado exitosamente.\n";
+		} else {
+		    echo "¡Posible ataque de carga de archivos!\n";
+		}
+		echo 'Aquí hay más información de depurado:';
+		print_r($_FILES);
+
+		print "</pre>";
+		//$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python ";
+		//exec($comando);
+		break;
+	case "-pbi":
+		$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo.py ";
+		exec($comando);
+		break;
+	case "-pbe":
+		$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python";
+		exec($comando);
+		break;
+
+}
 echo $output[0];
 ?>

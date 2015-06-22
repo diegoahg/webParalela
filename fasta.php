@@ -109,13 +109,13 @@
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
-														<input name="documento" type="file">
+														<input name="documento" type="file" require>
 													</div>
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
 														<label for="name">Matriz Sustitucin</label>
-														<select class="form-control" name="matriz" id="matriz">
+														<select class="form-control" name="matriz" id="matriz" require>
 															<option value="">Seleccione una matriz</option>
 															<option></option>
 														</select>
@@ -124,25 +124,25 @@
 												<div class="col-lg-3">
 													<div class="form-group">
 														<label for="email">Email</label>
-														<input type="email" class="form-control" name="email" id="email" placeholder="Email *">
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email *" require>
 													</div>
 												</div>
 												<div class="col-lg-2">
 													<div class="form-group">
 														<label for="distribucion">Penalización -1 -10</label> 
-														<input type="text" class="form-control" name="penalizacion" id="penalizacion" placeholder="">
+														<input type="text" class="form-control" name="penalizacion" id="penalizacion" placeholder="" require>
 													</div>
 												</div>
 												<div class="col-lg-2">
 													<div class="form-group">
 														<label for="tamano">Numero Resultado</label>
-														<input type="text" class="form-control" name="resultado" id="resultado" placeholder="">
+														<input type="text" class="form-control" name="resultado" id="resultado" placeholder="" require>
 													</div>
 												</div>
 												<div class="col-lg-2">
 													<div class="form-group">
 														<label for="rank">Rank</label>
-														<input type="text" class="form-control" name="rank" id="rank" placeholder="">
+														<input type="text" class="form-control" name="size" id="size" placeholder="" require>
 													</div>
 												</div>
 												<div class="col-lg-2">

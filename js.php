@@ -26,3 +26,4 @@
 <script type="text/javascript" src="/webParalela/js-plugin/appear/jquery.appear.js"></script>
 <!-- Custom  -->
 <script type="text/javascript" src="/webParalela/js/custom.js"></script>
+<script type="text/javascript" src="/webParalela/js/app.js"></script>
