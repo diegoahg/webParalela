@@ -116,7 +116,7 @@
 													<div class="form-group">
 														<label for="name">Matriz Sustitucin</label>
 														<select class="form-control" name="matriz" id="matriz">
-															<option value="">Seleccione un Suelo</option>
+															<option value="">Seleccione una matriz</option>
 															<option></option>
 														</select>
 													</div>

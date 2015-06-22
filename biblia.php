@@ -87,7 +87,7 @@
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
-									<p>Manuel Venegas Solis</p>
+									<p>Manuel Mal-Jefe Venegas</p>
 									<p>Miguel Angel Nuñez</p>
 									<p>Rodrigo Reyes Silva</p>
 									<h2>Technology</h2>
