@@ -1,11 +1,9 @@
-#!/usr/bin/python3
-
 from Serial.formatPDF import toStringFormat
 from Serial.searchMatches import buscaPatron
+from Serial.mail import envio_mail_serial_explicito
 from time import *
 import sys
 import json
-
 from run_pdf import Principal
 
 # Se lee el argumento 2 con el nombre del documento pdf
@@ -15,50 +13,49 @@ direccion = "Serial/" + pdf + ".pdf"
 # Transforma el texto del pdf en texto, y se almacena en la variable txt.
 txt = toStringFormat(direccion)
 
+# Recibe patron por consola
+keyword = str(sys.argv[2])
+keyword = keyword.split()
 
-def main():
-    # Recibe parametros por consola
-    keyword = str(sys.argv[2])
-    keyword = keyword.split()
-    jumpMax = int(sys.argv[3])
-    email = str(sys.argv[4])
+# Recibe Salto Maximo y Correo por consola
+jumpMax = int(sys.argv[3])
+email = str(sys.argv[4])
 
-    # Comienza la medicion de tiempos
-    start = time()
+# Invierte la palabra ingresada
+keyword = keyword + [w[::-1] for w in keyword]
 
-    # Invierte la palabra ingresada
-    keyword = keyword + [w[::-1] for w in keyword]
+# Almaceno los resultados en una sola variable
+match = []
 
-    # Almaceno los resultados en una sola variable
-    match = []
-    for i in range(len(keyword)):
-        match += buscaPatron(txt, keyword[i], jumpMax)
+# Comienza la medicion de tiempos
+start = time()
 
-    if (len(match) == 0):
-        print("Recopilacion Nodo Maestro 00-Ironman (Secuencial)")
-        print(
-            "*******************************************************************************\n")
-        print("\tResultado Final : NO SE ENCONTRO LA PALABRA")
-    else:
-        print("")
-        print("Recopilacion Nodo Maestro 00-Ironman (Secuencial)")
-        print(
-            "\n*****************************************************************************\n")
-        for i in range(len(match)):
-            print(match[i])
-        # print(
-        #    "\n***********************************INVERSO***********************************\n")
-        # for i in range(len(matchReverse)):
-        #    print(matchReverse[i])
-        print(
-            "\n*****************************************************************************\n")
-        print("\tResultado Final en orden: ", len(match), ".")
-        print(
-            "\n*****************************************************************************\n")
-        print("\tTiempo estimado de ejecucion: ", round(time() - start, 3),
-              " segundos. En recorrer ", len(txt), " paginas. Salto Maximo: ", jumpMax, ".")
-        print(
-            "\n*****************************************************************************\n")
+# Etapa Principal en que se buscan Resultados
+for i in range(len(keyword)):
+    match += buscaPatron(txt, keyword[i], jumpMax)
+
+# Muestra Resultados
+if (len(match) == 0):
+    print("Recopilacion Nodo Maestro 00-Ironman (Secuencial)")
+    print(
+        "*******************************************************************************\n")
+    print("\tResultado Final : NO SE ENCONTRO LA PALABRA")
+else:
+    print("")
+    print("Recopilacion Nodo Maestro 00-Ironman (Secuencial)")
+    print(
+        "\n*****************************************************************************\n")
+    for i in range(len(match)):
+        print(match[i])
+    print(
+        "\n*****************************************************************************\n")
+    print("\tResultado Final : ", len(match), ".")
+    print(
+        "\n*****************************************************************************\n")
+    print("\tTiempo estimado de ejecucion: ", round(time() - start, 3),
+          " segundos. En recorrer ", len(txt), " paginas. Salto Maximo: ", jumpMax, ".")
+    print(
+        "\n*****************************************************************************\n")
 
     prim_pag_o = 1  # json.loads('["dato":'+match[0]+']')
 
@@ -105,7 +102,7 @@ def main():
     final.write(texto)
 
     # Envia email al usuario
-    link = "http://localhost:8888/Python/index.php?pagina=" + \
+    link = "http://localhost:8888/webParalela/BIBLIA/index.php?pagina=" + \
         str(prim_pag_o) + "&file=" + pdf + "&pattern=" + unidas
     link = link.replace(' ', '')
     print ("\n\nAcceda (orden  ) a : ", link)
@@ -122,14 +119,15 @@ def main():
     print("Paramatros Generados!")
 
     # Generar PDF
-    Principal(info, stats, match)
+    # Principal(info, stats, match)
     print("Documento PDF creado!")
+
+    # Envio de Mail
+    envio_mail_serial_explicito(len(match), pdf, keyword, jumpMax, email)
+    print("Correo Enviado a ", email, "!\n")
 
     # Muestra resultados
     print("\nLa cantidad de caracteres analizados fue de: ",
           suma_abc, " con ", suma_voc, " vocales.")
     print("\nLos porcentajes encontrados fueron: ",
           porc_voc, '% vocales y ', porc_con, '% consonantes.')
-
-
-main()

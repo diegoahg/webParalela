@@ -1,24 +1,35 @@
 from Serial.formatPDF import toStringFormat
 from Serial.searchMatches import buscaPatron
-from dictionary import keywordList
+from Serial.mail import envio_mail_serial_implicito
 from time import *
 import sys
 import json
 from run_pdf import Principal
+from dictionary import keywordList
 
+# Se lee el argumento 2 con el nombre del documento pdf
 pdf = str(sys.argv[1])
 direccion = "Serial/" + pdf + ".pdf"
+
+# Transforma el texto del pdf en texto, y se almacena en la variable txt.
 txt = toStringFormat(direccion)
 
+# Recibe Salto Maximo y Correo por consola
 jumpMax = int(sys.argv[2])
+email = str(sys.argv[3])
 
+# Obtiene Palabras de los Diccionarios e invierte dichas palabras
 keyword = keywordList()
 keyword = keyword + [w[::-1] for w in keyword]
+
+# Almaceno los resultados en una sola variable
 match = []
 
+# Comienza la medicion de tiempos
 start = time()
+
+# Etapa Principal en que se buscan Resultados
 for i in range(len(keyword)):
-    # Busca las coincidencias con la keyword leida al reves.
     match += buscaPatron(txt, keyword[i], jumpMax)
 
 cont = 0
@@ -41,8 +52,7 @@ else:
         print(match[i])
     print(
         "\n*****************************************************************************\n")
-    print("\tResultado Final ")
-    print("\t En orden: ", len(match))
+    print("\tResultado Final : ", len(match), ".")
     print(
         "\n*****************************************************************************\n")
     print("\tTiempo estimado de ejecucion: ", round(time() - start, 3),
@@ -113,11 +123,11 @@ else:
 
     # Generar PDF
     # Principal(info, stats, match)
-
     print("Documento PDF creado!")
 
     # Envio de Mail
-    # 
+    envio_mail_serial_implicito(len(match), pdf, keyword, jumpMax, email)
+    print("Correo Enviado a ", email, "!\n")
 
     # Muestra resultados
     print("\nLa cantidad de caracteres analizados fue de: ",

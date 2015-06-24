@@ -3,66 +3,39 @@ from Paralelo.formatPDF import toStringFormat
 from Paralelo.searchMatches import buscaPatron
 from Paralelo.saltoProcesador import saltoProc
 from Paralelo.elimRep import elimina_rep
-from Paralelo.mail import envio_mail
+from Paralelo.mail import envio_mail_paralelo_implicito
+from dictionary import keywordList
+from mpi4py import MPI
+from numpy import *
 from time import *
 import sys
+import json
 
 # Se incluyen modulos para sacar Advertencias (warnings)
 import warnings
 warnings.filterwarnings('ignore')
 
-# Y las funciones de los modulos mpi4py, numpy
-from mpi4py import MPI
-from numpy import *
-
-# Variable de comunicacion
 comm = MPI.COMM_WORLD
-
-# Se obtiene el numero de procesador que se le asigna a cada nodo
 rank = comm.Get_rank()
-
-# Es el tamaÒo ingresado junto a mpirun (-np). Numero de procesadores
 size = comm.Get_size()
-
-# Se obtiene el nonbre del Nodo en que se esta ejecutando el codigo
 name = MPI.Get_processor_name()
 
-# Establece que el numero de procesadores sera el parametro -np ingresado
-# en la ejecucion
 procesadores = size
 gtime = time()
 
 
 def run():
+
     if(rank == 0):
-        # print("<INICIALIZANDO> Nodo Maestro",
-        #      name, ", Procesador Nro ", rank)
-
-        # Indica al usario que ingrese el nombre del documentos PDF
-        # pdf = input("\tIngrese nombre del arhivo PDF: ")
-        # direccion = "Serial/" + pdf + ".pdf"
-
         direccion = "Serial/" + str(sys.argv[1]) + ".pdf"
-
-        # Transforma el texto del pdf en texto, y se almacena en
-        # la variable txt
         txt = toStringFormat(direccion)
 
-        # Comienza a medir el tiempo de ejecucion
+        keyword = keywordList()
+        jumpMax = int(sys.argv[2])
+        email = str(sys.argv[3])
+
         start = time()
 
-        # Pide al usuario ingresar la palabra a buscar
-        # keyword = input("\tIngrese la palabra a buscar: ")
-        keyword = str(sys.argv[2])
-
-        keyword = keyword.split()
-
-        # Pide el salto maximo al usuario
-        # jumpMax = int(input("\tIngrese salto maximo: "))
-
-        jumpMax = int(sys.argv[3])
-
-        # Invierte la palabra ingresada
         keyword = keyword + [w[::-1] for w in keyword]
 
         # Calcula los saltos segun el salto maximo y la cantidad de
@@ -87,9 +60,7 @@ def run():
     if(rank != 0):
         # Recepcion de parametros desde el nodo maestro
         datos = comm.recv(source=0, tag=1)
-
         match, matchReverse = [], []
-        
         # Establece el tiempo inicial
         start2 = time()
 
@@ -103,10 +74,14 @@ def run():
         # name, ", Procesador Nro ", rank, "salto [", jumpMin, "->",
         # jumpMax,"]")
 
+        # Busca las coincidencias con la keyword normal.
+
+        # Busca las coincidencias con la keyword leida al reves.
+
         for i in range(len(keyword)):
-            if(i>=int(len(keyword)/2)):
+            if(i >= int(len(keyword) / 2)):
                 # Busca las coincidencias con la keyword leida al reves.
-                matchReverse += buscaPatron(txt, keyword[i], jumpMin, jumpMax)
+                match += buscaPatron(txt, keyword[i], jumpMin, jumpMax)
             else:
                 # Busca las coincidencias con la keyword normal.
                 match += buscaPatron(txt, keyword[i], jumpMin, jumpMax)
@@ -128,7 +103,7 @@ def run():
         toolbar_width = 50
         aux = (procesadores - 1) / toolbar_width
         cont = aux
-        print("\nBuscando : ", keyword)
+        print("\nBuscando...")
         print("----------------------------------------------------------")
         sys.stdout.write("0 [%s] 100" % (" " * (toolbar_width)))
         sys.stdout.flush()
@@ -214,4 +189,79 @@ def run():
               " tiempo_min_sl ", round(tiempo_min_sl, 3), ".")
 
         # envio_mail(cant1, cant2, sys.argv[1], sys.argv[2], sys.argv[3])
+
+        prim_pag_o = 1  # json.loads('["dato":'+match[0]+']')
+
+        # Estadisticas pdf
+        abc = "abcdefghijklmnopqrstuvwxyz"
+        voc = "aeiou"
+        suma_abc = 0
+        suma_voc = 0
+        maximo_veces_abc = -1
+        veces_abc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        veces_voc = [0, 0, 0, 0, 0]
+        for i in range(len(txt)):
+            for j in range(len(txt[i])):
+                for k in range(len(abc)):
+                    if(txt[i][j] == abc[k]):
+                        veces_abc[k] += 1
+                        suma_abc += 1
+                for k in range(len(voc)):
+                    if(txt[i][j] == voc[k]):
+                        veces_voc[k] += 1
+                        suma_voc += 1
+        for i in range(len(veces_abc)):
+            if(maximo_veces_abc < veces_abc[i]):
+                maximo_veces_abc = veces_abc[i]
+
+        porc_voc = round((suma_voc / suma_abc) * 100, 1)
+        porc_con = round(100 - porc_voc, 1)
+        tuple_veces_abc = []
+        tuple_veces_abc.append(tuple(veces_abc))
+
+        # Cadena de palabras unidas
+        unidas = "implicito"
+        unidas_t = "implicito_total"
+
+        # Generacion de archivos output
+        final = open(
+            'Respuestas/respuesta_' + pdf + '_' + unidas + '.json', 'w')
+        texto = json.dumps(match)
+        final.write(texto)
+
+        final = open('Textos/' + pdf + ".txt", 'w')
+        texto = json.dumps(txt)
+        final.write(texto)
+
+        # Envia email al usuario
+        link = "http://localhost:8888/webParalela/BIBLIA/index.php?pagina=" + \
+            str(prim_pag_o) + "&file=" + pdf + "&pattern=" + unidas
+        link = link.replace(' ', '')
+        print ("\n\nAcceda (orden  ) a : ", link)
+
+        # Preparacion de datos a enviar
+        stats = {'suma_abc': suma_abc, 'suma_voc': suma_voc,
+                 'porc_voc': porc_voc, 'porc_con': porc_con, 'veces_voc': veces_voc,
+                 'veces_abc': veces_abc, 'tuple_veces_abc': tuple_veces_abc, 'maximo_veces_abc': maximo_veces_abc}
+
+        info = {'nombre_pdf': pdf, 'patron_a_buscar': unidas_t,
+                'nro_de_paginas': len(txt), 'link': link, 'salto_maximo': jumpMax}
+
+        print(stats['veces_abc'])
+        print("Paramatros Generados!")
+
+        # Generar PDF
+        # Principal(info, stats, match)
+        print("Documento PDF creado!")
+
+        # Envio de Mail
+        envio_mail_paralelo_implicito(len(match), pdf, keyword, jumpMax, email)
+        print("Correo Enviado a ", email, "!\n")
+
+        # Muestra resultados
+        print("\nLa cantidad de caracteres analizados fue de: ",
+              suma_abc, " con ", suma_voc, " vocales.")
+        print("\nLos porcentajes encontrados fueron: ",
+              porc_voc, '% vocales y ', porc_con, '% consonantes.')
 run()
