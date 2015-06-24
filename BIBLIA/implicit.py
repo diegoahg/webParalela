@@ -26,9 +26,6 @@ for i in range(len(txt)):
     cont += len(txt[i])
 print("\nLa cantidad de caracteres analizados fue de: ", cont)
 
-# Imprime las coincidencias encontradas (con la palabra al reves) con paginas, salto y inicio y fin de la palabra.
-# [print(solution) for solution in matchReverse]
-
 if (len(match) == 0):
     tot = 1
     print("Recopilacion Nodo Maestro 00-Ironman (Secuencial)")
@@ -98,7 +95,7 @@ else:
     final.write(texto)
 
     # Envia email al usuario
-    link = "http://localhost:8888/Python/index.php?pagina=" + \
+    link = "http://localhost:8888/webParalela/BIBLIA/index.php?pagina=" + \
         str(prim_pag_o) + "&file=" + pdf + "&pattern=" + unidas
     link = link.replace(' ', '')
     print ("\n\nAcceda (orden  ) a : ", link)
@@ -115,9 +112,12 @@ else:
     print("Paramatros Generados!")
 
     # Generar PDF
-    Principal(info, stats, match)
+    # Principal(info, stats, match)
 
     print("Documento PDF creado!")
+
+    # Envio de Mail
+    # 
 
     # Muestra resultados
     print("\nLa cantidad de caracteres analizados fue de: ",

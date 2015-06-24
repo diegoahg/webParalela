@@ -63,7 +63,10 @@
 									// error_reporting(E_ALL);
 									// ini_set('display_errors','on');
 									ini_set('memory_limit', '512M');
-									$maximo_linea = 6;
+									
+									// MAXIMO DE ANCHO DE LA MATRIZ DE SALIDA
+									$maximo_linea = 40;
+									$limite_resultados = 20;
 								    
 								    $archivo = $_GET["file"];
 								    $frase = $_GET["pattern"];
@@ -83,9 +86,9 @@
 									$arr_resp = json_decode($string, true);
 									$con = 0;
 									$sal_m = -1;
-									$posiciones1 = array();
-									$posiciones2 = array();
-									$posiciones3 = array();
+									$posiciones1 = array(); // array_push($posiciones1, $inicio);
+									$posiciones2 = array(); // array_push($posiciones2, [$inicio,$color]);
+									$posiciones3 = array(); // Paginas con respuestas
 
 									// Colores para mostrar coincidencias
 									$colores = ["red","blue","green","brown","orange","fuchsia","purple","yellow","black","lime","olive","maroon","navy","teal","gray","silver","black"];
@@ -126,9 +129,10 @@
 								<?php
 								    $coincidencias_pagina = array();
 								    $unicos = array();
+								    //var_dump($arr_resp);
 									foreach ($arr_resp as $json_r) // respuestas
 									{ 
-								    	if($json_r["pagina"]==$pagina & $json_r["salto"]>2 & in_array($json_r["keyword"],$unicos)==FALSE & count($coincidencias_pagina)<17)
+								    	if($json_r["pagina"]==$pagina & $json_r["salto"]>2 & in_array($json_r["keyword"],$unicos)==FALSE & count($coincidencias_pagina)<$limite_resultados)
 								    	{
 									    	$salto = $json_r["salto"];
 									    	$inicio = $json_r["inicio"]-1;
@@ -136,8 +140,14 @@
 									    	
 									    	if($salto>=$maximo_linea) // Palabras diagonales
 									    	{
+									    		if($salto==$maximo_linea)
+									    		{
+									    			$forma = "recta vertical";
+									    		}else{
+									    			$forma = "diagonal";
+									    		}
 									    		array_push($unicos,$act_word);
-										    	array_push($coincidencias_pagina,[$salto,$inicio,$act_word,$color,"diagonal"]);
+										    	array_push($coincidencias_pagina,[$salto,$inicio,$act_word,$color,$forma]);
 										    	$con += 1;
 										    	
 										    	if($sal_m<$salto){$sal_m=$inicio+$salto*count($act_word);}
@@ -176,7 +186,6 @@
 										    }
 								    	}
 									}
-									if($con == 0) { echo "<br>NO HAY COINCIDENCIAS EN LA PAGINA $pagina <br>";}
 
 									for($i=0; $i<sizeof($arr_resp); $i++) // respuesta
 									{
@@ -189,49 +198,70 @@
 										}
 									}
 
-									echo "<h3>Paginas con resultados</h3>";
-								    echo '<b><font size="2" face="courier">';
-								    
-								    for($i=1; $i<=sizeof($arr_page); $i++)
-								    {
-								    	if(array_search($i, $posiciones3)!==FALSE)
-								    	{
-								    		echo "<a href=index.php?pagina=$i&file=$archivo&pattern=$frase>[$i]</a>";
-								    		echo '  ';
-								    	}
-								    }
-								    echo '</font></b><hr>';
+									if($con == 0) 
+									{ 
+										echo "<br>NO HAY COINCIDENCIAS EN LA PAGINA $pagina <br>";
+										echo "<h3>Paginas con resultados</h3>";
+									    echo '<b><font size="2" face="courier">';
 
-								    echo "<h3>Resultados</h3><h4>Se encontraron ".count($coincidencias_pagina)." veces el patron en esta pagina, ".count($arr_resp)." en todo el documento.</h4><ol>";
-								    foreach ($coincidencias_pagina as $key) {
-								    	echo '<li><font color="'.$colores[$key[3]].'"'."> Desde el caracter <b>$key[1]</b>, con un salto de <b>$key[0]</b> posiciones, de forma $key[4]. Patron: <b>".strtoupper(implode('-',str_split($key[2])))."</b></font></li>";
-								    }
+										if($_GET['pagina']==0){echo "Se detecto que no ingreso ningun parametro.\nUse por ejemplo el siguiente enlace: <a href='http://localhost:8888/webParalela/BIBLIA/index.php?pagina=1&file=prueba&pattern=food_roses_order'> Link </a>";}
+									    
+									    for($i=1; $i<=sizeof($arr_page); $i++)
+									    {
+									    	if(array_search($i, $posiciones3)!==FALSE)
+									    	{
+									    		echo "<a href=index.php?pagina=$i&file=$archivo&pattern=$frase>[$i]</a>";
+									    		echo '  ';
+									    	}
+									    }
+									    echo '</font></b><hr>';
 
-									echo "</ol><hr><h3>Texto</h3>";
-									echo '<font size="3" face="courier">';
-									for($i=0; $i<strlen($arr_page[$pagina-1]); $i++)
-									{
-										if(in_array($i, $posiciones1))
+									}else{
+
+										echo "<h3>Paginas con resultados</h3>";
+									    echo '<b><font size="2" face="courier">';
+									    
+									    for($i=1; $i<=sizeof($arr_page); $i++)
+									    {
+									    	if(array_search($i, $posiciones3)!==FALSE)
+									    	{
+									    		echo "<a href=index.php?pagina=$i&file=$archivo&pattern=$frase>[$i]</a>";
+									    		echo '  ';
+									    	}
+									    }
+									    echo '</font></b><hr>';
+
+									    echo "<h3>Resultados</h3><h4>Se encontraron ".count($coincidencias_pagina)." veces el patron en esta pagina, ".count($arr_resp)." en todo el documento. Utilizando una matriz de ancho $maximo_linea.</h4><ol>";
+									    foreach ($coincidencias_pagina as $key) {
+									    	echo '<li><font color="'.$colores[$key[3]].'"'."> Desde el caracter <b>$key[1]</b>, con un salto de <b>$key[0]</b> posiciones, de forma <b>$key[4]</b>. Patron: <b>[".strtoupper(implode('-',str_split($key[2])))."]</b></font></li>";
+									    }
+
+										echo "</ol><hr><h3>Texto</h3>";
+										echo '<font size="3" face="courier">';
+										for($i=0; $i<strlen($arr_page[$pagina-1]); $i++)
 										{
-											for($j=0;$j<sizeof($posiciones2);$j++)
+											if(in_array($i, $posiciones1))
 											{
-												if($posiciones2[$j][0]==$i)
-												{ 
-													$actual_col=$posiciones2[$j][1];
+												for($j=0;$j<sizeof($posiciones2);$j++)
+												{
+													if($posiciones2[$j][0]==$i)
+													{ 
+														$actual_col=$posiciones2[$j][1];
+													}
 												}
-											}
-											
-											echo '<b><font size="3" face="courier" color="'.$colores[$actual_col].'">'.strtoupper($arr_page[$pagina-1][$i])."</font></b>";
-											$con2 += 1;
+												
+												echo '<b><font size="3" face="courier" color="'.$colores[$actual_col].'">'.strtoupper($arr_page[$pagina-1][$i])."</font></b>";
+												$con2 += 1;
 
-										}else{
-											echo ($arr_page[$pagina-1][$i])."";
-											$con2 += 1;
+											}else{
+												echo ($arr_page[$pagina-1][$i])."";
+												$con2 += 1;
+											}
+											if($archivo=="prueba"){$sal_m=10;}else{$sal_m=$maximo_linea;}
+											if($con2==$sal_m){echo "<br>"; $con2 =0;}
 										}
-										if($archivo=="prueba"){$sal_m=10;}else{$sal_m=$maximo_linea;}
-										if($con2==$sal_m){echo "<br>"; $con2 =0;}
+										echo "</font>";
 									}
-									echo "</font>";
 								?>							
 						</section>
 						<!--end page content-->

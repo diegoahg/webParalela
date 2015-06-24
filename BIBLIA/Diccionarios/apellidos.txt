@@ -1,103 +1,103 @@
- aguilera 
- alarcon 
- alvarado 
- alvarez 
- aravena 
- araya 
- bravo 
- bustamante 
- bustos 
- caceres 
- campos 
- cardenas 
- carrasco 
- carvajal 
- castillo 
- castro 
- contreras 
- cortes 
- diaz 
- donoso 
- escobar 
- espinoza 
- farias 
- fernandez 
- figueroa 
- flores 
- fuentes 
- gallardo 
- garcia 
- garrido 
- godoy 
- gomez 
- gonzalez 
- guerrero 
- gutierrez 
- guzman 
- henriquez 
- hernandez 
- herrera 
- jara 
- jimenez 
- lagos 
- leiva 
- lopez 
- maldonado 
- martinez 
- medina 
- miranda 
- molina 
- morales 
- moreno 
- munoz 
- navarrete 
- navarro 
- nunez 
- olivares 
- orellana 
- ortega 
- ortiz 
- palma 
- paredes 
- parra 
- pena 
- perez 
- pino 
- pizarro 
- poblete 
- ramirez 
- reyes 
- riquelme 
- rivera 
- rodriguez 
- rojas 
- romero 
- ruiz 
- saavedra 
- saez 
- salazar 
- salinas 
- sanchez 
- sandoval 
- sanhueza 
- sanmartin 
- sepulveda 
- silva 
- soto 
- tapia 
- toro 
- torres 
- valdes 
- valenzuela 
- vargas 
- vasquez 
- vega 
- venegas 
- vera 
- vergara 
- vidal 
- yanez 
- zuniga 
+aguilera 
+alarcon 
+alvarado 
+alvarez 
+aravena 
+araya 
+bravo 
+bustamante 
+bustos 
+caceres 
+campos 
+cardenas 
+carrasco 
+carvajal 
+castillo 
+castro 
+contreras 
+cortes 
+diaz 
+donoso 
+escobar 
+espinoza 
+farias 
+fernandez 
+figueroa 
+flores 
+fuentes 
+gallardo 
+garcia 
+garrido 
+godoy 
+gomez 
+gonzalez 
+guerrero 
+gutierrez 
+guzman 
+henriquez 
+hernandez 
+herrera 
+jara 
+jimenez 
+lagos 
+leiva 
+lopez 
+maldonado 
+martinez 
+medina 
+miranda 
+molina 
+morales 
+moreno 
+munoz 
+navarrete 
+navarro 
+nunez 
+olivares 
+orellana 
+ortega 
+ortiz 
+palma 
+paredes 
+parra 
+pena 
+perez 
+pino 
+pizarro 
+poblete 
+ramirez 
+reyes 
+riquelme 
+rivera 
+rodriguez 
+rojas 
+romero 
+ruiz 
+saavedra 
+saez 
+salazar 
+salinas 
+sanchez 
+sandoval 
+sanhueza 
+sanmartin 
+sepulveda 
+silva 
+soto 
+tapia 
+toro 
+torres 
+valdes 
+valenzuela 
+vargas 
+vasquez 
+vega 
+venegas 
+vera 
+vergara 
+vidal 
+yanez 
+zuniga 
 ananenko
 arkhipov
 bach
