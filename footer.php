@@ -5,7 +5,7 @@
 				<div class="col-sm-6">
 					<div class="footerWidget">
 						<img src="/webParalela/images/neko-logo.png" alt="latest Little Neko news" id="footerLogo">
-						<p>Grupo de estudiantes de Computacion Paralela, primer semestrea, de la Universidad Tecnologica Metropolitana (UTEM), que desarrollaron una sistema computacional capaz de cacular grandes volumenes de datos. Todo esto puede hacerse desde esta web.</p>
+						<p>Grupo de estudiantes de Computación Paralela, primer semestre, de la Universidad Tecnológica Metropolitana (UTEM), que desarrollaron una sistema computacional capaz de calcular grandes volúmenes de datos. Todo esto puede hacerse desde esta web.</p>
 					</div>
 				</div>
 				<div class="col-sm-3">

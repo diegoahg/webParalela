@@ -40,7 +40,7 @@
 									<ul class="subMenu">
 										<li><a href="percolacion.php">Perocolación</a></li>
 										<li><a href="fasta.php">Fasta</a></li>
-										<li><a href="biblia.php">Codigo de la Biblia</a></li>
+										<li><a href="biblia.php">Código de la Biblia</a></li>
 									</ul>
 								</li>
 								<li class="sep"></li>

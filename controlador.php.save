@@ -1,3 +1,61 @@
+//var_dump($_POST["algoritmo"]);
+$output = array(); //contendrá cada linea salida desde la aplicación en Python
+
+error_reporting(E_ALL);
+ini_set('display_errors','on');
+
+/*Utilizando exec y enviando le el comando para ejecutar la aplicación
+*solo hará que se ejecute mas no se mostrará nada...
+*/
+//exec("python /var/www/holamundo.py");
+
+/*Usando exec, pero agregando le como parametro además del comando para  ejecut$
+*/
+
+//$alg = $_POST["algoritmo"];
+//$comando = "sudo -u paralela /usr/bin/mpirun -np 95 --hostfile /home/hostfile$
+//exec($comando, $result);
+switch($_POST["algoritmo"]){
+
+//var_dump($_POST["algoritmo"]);
+$output = array(); //contendrá cada linea salida desde la aplicación en Python
+
+error_reporting(E_ALL);
+ini_set('display_errors','on');
+
+/*Utilizando exec y enviando le el comando para ejecutar la aplicación
+*solo hará que se ejecute mas no se mostrará nada...
+*/
+//exec("python /var/www/holamundo.py");
+
+/*Usando exec, pero agregando le como parametro además del comando para  ejecut$
+*/
+
+//$alg = $_POST["algoritmo"];
+//$comando = "sudo -u paralela /usr/bin/mpirun -np 95 --hostfile /home/hostfile$
+//exec($comando, $result);
+switch($_POST["algoritmo"]){
+<?php
+
+$output = array(); //contendrá cada linea salida desde la aplicación en Python
+
+error_reporting(E_ALL);
+ini_set('display_errors','on');
+
+/*Utilizando exec y enviando le el comando para ejecutar la aplicación
+*solo hará que se ejecute mas no se mostrará nada...
+*/
+//exec("python /var/www/holamundo.py");
+
+/*Usando exec, pero agregando le como parametro además del comando para  ejecut$
+*/
+
+//$alg = $_POST["algoritmo"];
+//$comando = "sudo -u paralela /usr/bin/mpirun -np 95 --hostfile /home/hostfile$
+//exec($comando, $result);
+switch($_POST["algoritmo"]){
+<?php
+<?php
 <?php
 //var_dump($_POST["algoritmo"]);
 $output = array(); //contendrá cada linea salida desde la aplicación en Python

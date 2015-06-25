@@ -18,7 +18,7 @@
 <script type="text/javascript" src="/webParalela/js-plugin/neko-contact-ajax-plugin/js/jquery.validate.min.js"></script>
 <!-- paraallax -->
 <script type="text/javascript" src="/webParalela/js-plugin/parallax/js/jquery.stellar.min.js"></script>
-<script type="text/javascript" src="/webParalela/js-plugin/parallax/js/jquery.-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="/webParalela/js-plugin/parallax/js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script type="text/javascript" src="/webParalela/js-plugin/parallax/js/jquery.localscroll-1.2.7-min.js"></script>
 <!-- sharrre -->
 <script type="text/javascript" src="/webParalela/js-plugin/jquery.sharrre-1.3.4/jquery.sharrre-1.3.4.min.js"></script>
@@ -26,4 +26,3 @@
 <script type="text/javascript" src="/webParalela/js-plugin/appear/jquery.appear.js"></script>
 <!-- Custom  -->
 <script type="text/javascript" src="/webParalela/js/custom.js"></script>
-<script type="text/javascript" src="/webParalela/js/app.js"></script>

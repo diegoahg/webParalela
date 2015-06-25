@@ -60,15 +60,16 @@
 						<div class="col-sm-10">
 							<h1>
 								<?php
-									// error_reporting(E_ALL);
-									// ini_set('display_errors','on');
+									//error_reporting(E_ALL);
+									//ini_set('display_errors','on');
 									ini_set('memory_limit', '512M');
 									
 									// MAXIMO DE ANCHO DE LA MATRIZ DE SALIDA
 									$maximo_linea = 40;
-									$limite_resultados = 20;
+									$limite_resultados = 17;
 								    
 								    $archivo = $_GET["file"];
+								    if($archivo == "prueba"){ $maximo_linea=10;}
 								    $frase = $_GET["pattern"];
 								    if(isset($_GET["pagina"]))
 								    {
@@ -204,7 +205,7 @@
 										echo "<h3>Paginas con resultados</h3>";
 									    echo '<b><font size="2" face="courier">';
 
-										if($_GET['pagina']==0){echo "Se detecto que no ingreso ningun parametro.\nUse por ejemplo el siguiente enlace: <a href='http://localhost:8888/webParalela/BIBLIA/index.php?pagina=1&file=prueba&pattern=food_roses_order'> Link </a>";}
+										if($_GET['pagina']==0){echo "Se detecto que no ingreso ningun parametro.\nUse por ejemplo el siguiente enlace: <a href='http://00-ironman.clustermarvel.utem/webParalela/BIBLIA/index.php?pagina=1&file=prueba&pattern=food_roses_order'> Link </a>";}
 									    
 									    for($i=1; $i<=sizeof($arr_page); $i++)
 									    {

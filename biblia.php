@@ -1,3 +1,9 @@
+<?php
+	include("simpleql/class.simpleql.php");
+	session_start();
+	require_once("function.php");
+	//EsUsuario();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -77,13 +83,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<img src="images/portfolio/img-fullwidth-1.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
+							<img src="images/portfolio/biblia.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 col-sm-4">
 									<h1>Torah</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. Sed ac consectetur leo. Pellentesque habitant morbi tristique senectus et netus...</p>
+									<p> Mediante el análisis de patrones del documento otorgado, ya sea de forma implícita o mediante el ingreso de un patrón determinado (explicita), se intenta obtener determinados mensajes ocultos que posean una doble finalidad de carácter subliminal.</p>
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
@@ -105,7 +111,7 @@
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<form method="post" action="controlador.php" id="postComment" role="form" enctype="multipart/form-data">
-												<input type="hidden" name="algoritmo" id="algoritmo" value="-pb">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pbi">
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
@@ -117,7 +123,10 @@
 														<label for="name">Cantidad de Salto</label>
 														<select class="form-control" name="saltos" id="saltos">
 															<option value="">Seleccione un Cantidad</option>
-															<option></option>
+															<?php for($i=400; $i > 1; $i=$i- 50){?>
+															<option name= "<?php echo $i; ?>" value = "<?php echo $i; ?>"><?php echo $i;?></option>
+															
+															<?php } ?>
 														</select>
 													</div>
 												</div>
@@ -135,8 +144,8 @@
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
-														<label for="rank">Rank</label>
-														<input type="text" class="form-control" name="rank" id="rank" placeholder="">
+														<label for="size">Size</label>
+														<input type="text" class="form-control" name="size" id="size" placeholder="">
 													</div>
 												</div>
 												<div class="col-lg-2">

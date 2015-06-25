@@ -1,3 +1,12 @@
+<?php
+	error_reporting(E_ALL);
+	ini_set('display_errors','on');	
+	include("simpleql/class.simpleql.php");
+	session_start();
+	require_once("function.php");
+	EsUsuario();
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -90,7 +99,7 @@
 										</div>
 										<section class="boxContent">
 											<h3>Percolación</h3>
-											<p> la percolación se refiere al paso lento de fluidos a través de materiales porosos. Ejemplos de este proceso son la filtración y la lixiviación. <br />
+											<p> La percolación se refiere al paso lento de fluidos a través de materiales porosos. Ejemplos de este proceso son la filtración y la lixiviación. <br />
 												<!--<a href="percolacion.php" class="moreLink">&rarr; read more</a>-->
 											</p>
 										</section>
@@ -133,7 +142,7 @@
 											</div>
 											<section class="boxContent">
 												<h3>Torah</h3>
-												<p>El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro.<br>
+												<p> El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro.<br>
 													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
 												</p>
 											</section>

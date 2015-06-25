@@ -1,3 +1,9 @@
+<?php
+	include("simpleql/class.simpleql.php");
+	session_start();
+	require_once("function.php");
+	//EsUsuario();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -77,13 +83,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<img src="images/portfolio/img-fullwidth-1.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
+							<img src="images/portfolio/fasta.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 col-sm-4">
 									<h1>Fasta</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. Sed ac consectetur leo. Pellentesque habitant morbi tristique senectus et netus...</p>
+									<p> Módulo destinado a obtención de secuencias de ADN o Proteínas que posean un mayor porcentaje de similitud en relación a la secuencia entrante. Mediante la alineación de estas cadenas y sus datos asociados, es posible otorgar información de gran relevancia para el análisis científico.</p>
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
@@ -114,10 +120,34 @@
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
-														<label for="name">Matriz Sustitucin</label>
-														<select class="form-control" name="matriz" id="matriz" require>
-															<option value="">Seleccione una matriz</option>
-															<option></option>
+														<label for="name">Matriz Sustituci&oacuten</label>
+														<select class="form-control" name="matriz" id="matriz">
+															<option name= "pam60" value="pam60">Pam60</option>
+															<option name= "pam120" value="pam120">Pam120</option>
+															<option name= "pam180" value="pam180">Pam180</option>
+															<option name= "pam250" value="pam250">Pam250</option>
+															<option name= "pam30" value="pam30">Pam30</option>
+															<option name= "pam300" value="pam300">Pam300</option>
+															<option name= "pam90" value="pam90">Pam90</option>
+															<option name= "blosum30" value="blosum30">Blosum30</option>
+															<option name= "blosum35" value="blosum35">Blosum35</option>
+															<option name= "blosum40" value="blosum40">Blosum40</option>
+															<option name= "blosum45" value="blosum45">Blosum45</option>
+															<option name= "blosum50" value="blosum50">Blosum50</option>
+															<option name= "blosum55" value="blosum55">Blosum55</option>
+															<option name= "blosum60" value="blosum60">Blosum60</option>
+															<option name= "blosum62" value="blosum62">Blosum62</option>
+															<option name= "blosum65" value="blosum65">Blosum65</option>
+															<option name= "blosum70" value="blosum70">Blosum70</option>
+															<option name= "blosum75" value="blosum75">Blosum75</option>
+															<option name= "blosum80" value="blosum80">Blosum80</option>
+															<option name= "blosum85" value="blosum85">Blosum85</option>
+															<option name= "blosum90" value="blosum90">Blosum90</option>
+															<option name= "blosum95" value="blosum95">Blosum95</option>
+															<option name= "blosum100" value="blosum100">Blosum100</option>
+															<option name= "benner6" value="benner6">Benner6</option>
+															<option name= "benner22" value="benner22">Benner22</option>
+															<option name= "benner74" value="benner74">Benner74</option>
 														</select>
 													</div>
 												</div>
@@ -141,7 +171,7 @@
 												</div>
 												<div class="col-lg-2">
 													<div class="form-group">
-														<label for="rank">Rank</label>
+														<label for="size">Size</label>
 														<input type="text" class="form-control" name="size" id="size" placeholder="" require>
 													</div>
 												</div>

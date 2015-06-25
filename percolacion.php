@@ -76,13 +76,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<img src="images/portfolio/img-fullwidth-1.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
+							<img src="images/portfolio/parcolacion.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 col-sm-4">
 									<h1>Percolación</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate nunc ut tellus sollicitudin placerat. Sed ac consectetur leo. Pellentesque habitant morbi tristique senectus et netus...</p>
+									<p> Con la finalidad de evitar posibles catástrofes de carácter social, asociados particularmente a la propagación de enfermedades e incendios forestales, se ha implementado un algoritmo, mediante el uso de simulaciones, capaz de proporcionar información de gran relevancia para la toma de decisiones ante un eventual desastre.</p>
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
@@ -104,23 +104,39 @@
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<form method="post" action="controlador.php" id="postComment" role="form"  enctype="multipart/form-data">
-												<input type="hidden" name="algoritmo" id="algoritmo" value="-pp">
 												<div class="col-lg-3">
-													<div class="form-group">
-														<label for="tipoArbol">Tipo Arbol</label>
-														<select class="form-control" name="tipoArbol" id="tipoArbol">
-															<option value="">Seleccione un Arbol</option>
-															<option value=""></option>
-														</select>
+														<div class="form-group">
+															<label for="opcion">Elija el Area a la que quiere aplicar percolación</label>
+															<input type="radio" name="opcion" id="incendio" value="incendio" checked> Incendios 
+															<input type="radio" name="opcion" id="enfermedades" value="enfermedades"> Enfermedades
+														</div>
 													</div>
-												</div>
-												<div class="col-lg-3">
-													<div class="form-group">
-														<label for="name">Tipo Suelo</label>
-														<select class="form-control" name="tipoSubtotal" id="tipoSubtotal">
-															<option value="">Seleccione un Suelo</option>
-															<option></option>
-														</select>
+												<div id="percolacion">
+													<input type="hidden" name="algoritmo" id="algoritmo" value="-ppi">
+													<div class="col-lg-3">
+														<div class="form-group">
+															<label for="tipoArbol">Tipo Arbol</label>
+															<select class="form-control" name="tipoArbol" id="tipoArbol">
+																<option value="">Seleccione un Arbol</option>
+																<option value="1">Quillay</option>
+																<option value="2">Peumo</option>
+																<option value="3">Boldo</option>
+																<option value="4">Roble</option>
+																<option value="5">Rauli</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-lg-3">
+														<div class="form-group">
+															<label for="name">Tipo Suelo</label>
+															<select class="form-control" name="tipoSuelo" id="tipoSuelo">
+																<option value="">Seleccione un Suelo</option>
+																<option value="1">Serranias aridas o semiaridas</option>
+																<option value="2">Granitico de la costa</option>
+																<option value="3">Vetisoles</option>
+																<option value="4">Aluviales del valle central</option>
+															</select>
+														</div>
 													</div>
 												</div>
 												<div class="col-lg-3">
@@ -147,8 +163,8 @@
 												</div>
 												<div class="col-lg-1">
 													<div class="form-group">
-														<label for="rank">Rank</label>
-														<input type="text" class="form-control" name="rank" id="rank" placeholder="">
+														<label for="size">Size</label>
+														<input type="text" class="form-control" name="size" id="size" placeholder="">
 													</div>
 												</div>
 												<div class="col-lg-2">
@@ -173,5 +189,12 @@
 	<!-- End Document 
 	================================================== -->
 	<?php require_once("js.php"); ?>
+	<script type="text/javascript">
+		$('#enfermedades').click(function(){
+			if($('#enfermedades').is(':checked')) {
+				$("#percolacion").html("");
+			}
+		});
+	</script>
 </body>
 </html>

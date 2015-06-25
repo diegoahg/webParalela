@@ -60,7 +60,8 @@
 						<div class="col-md-4" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
 							<h1>Plataforma de Servicios</h1>
 							<p>Computación Paralela, primer semestre 2015</p>
-								<a href="#" target="_blank" class="btn btn-lg">Comenzar Experiencia</a>
+								<a href="registrar.php" target="_blank" class="btn btn-lg">Registrarse</a>
+								<a href="login.php" target="_blank" class="btn btn-lg">Login</a>
 							</div>
 							<div class="col-md-8" data-nekoanim="fadeInRight" data-nekodelay="50">
 								<img src="images/theme-pics/devices.png" alt="SEATTLE premium website template" class="img-responsive" />
@@ -75,7 +76,7 @@
 							<div class="row">
 								<div class="col-md-12 text-center mb30">
 									<h1>Nuestros Servicios</h1>
-									<h2 class="subTitle">Ejecutamos codigos en pyhton de panera paralela para ejecutar mas rapido sus requerimientos</h2>
+									<h2 class="subTitle">Ejecutamos códigos en pyhton de panera paralela para ejecutar mas rápido sus requerimientos</h2>
 								</div>
 							</div>
 							<div class="row">
@@ -133,7 +134,7 @@
 								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
 									<h1>PERCOLACIÓN</h1>
 									<p>
-										La percolación es el momento en el cual un material puede llegar desde un extremo a otro, gracias a este concepto de la física/química que se está explotando hoy en día, se logran tener aproximaciones en otros problemas, como por ejemplo, propagación de bacterias, propagación de incendios forestales, cromatizacion de líquidos, entre varios más.
+										La percolación es el momento en el cual un material puede llegar desde un extremo a otro, gracias a este concepto de la física/química que se está explotando hoy en día, se logran tener aproximaciones en otros problemas, como por ejemplo, propagación de bacterias, propagación de incendios forestales, cromatización de líquidos, entre varios más.
 									</p>
 								</div>
 							</div>
@@ -147,7 +148,7 @@
 								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
 									<h1>FASTA</h1>
 									<p>
-										úsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleotidos.
+										Búsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleótidos.
 									</p>
 								</div>
 								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
@@ -167,7 +168,7 @@
 								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
 									<h1>TORAH</h1>
 									<p>
-										El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro. Estos códigos son legibles gracias a unas reglas de codificación que únicamente pueden aplicarse al texto en hebreo antiguo utilizando programas informáticos. El libro El código secreto de la Biblia de Michael Drosnin, publicado en 1997, popularizó ésta teoría.
+										El código de la Biblia, también conocido como el código de la Torah, consiste en un supuesto código oculto en la Torah judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro. Estos códigos son legibles gracias a unas reglas de codificación que únicamente pueden aplicarse al texto en hebreo antiguo utilizando programas informáticos. El libro El código secreto de la Biblia de Michael Drosnin, publicado en 1997, popularizó ésta teoría.
 									</p>
 								</div>
 							</div>
@@ -217,7 +218,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/diego.png" alt="" class="img-responsive"></div>
 										<div class="boxContent text-center">
 											<h3>Diego Hernández García</h3>
 											<p>Gerente General</p>
@@ -226,7 +227,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-2.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/roberto.png" alt="" class="img-responsive"></div>
 										<div class="boxContent text-center">
 											<h3>Roberto Oñate Piedras</h3>
 											<p>SubGerente General</p>
@@ -235,7 +236,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-3.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/sergio.png" alt="" class="img-responsive"></div>
 										<div class="boxContent  text-center">
 											<h3>Sergio Abarca Flores</h3>
 											<p>Jefe Área Percolación</p>
@@ -244,7 +245,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/pina.png" alt="" class="img-responsive"></div>
 										<div class="boxContent">
 											<h3>Claudio Piña Novoa</h3>
 											<p>Desarrollador Área Percolación</p>
@@ -253,7 +254,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/rosa.png" alt="" class="img-responsive"></div>
 										<div class="boxContent">
 											<h3>Rosa González Soto</h3>
 											<p>Documentador Área Percolación</p>
@@ -262,7 +263,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/carlos.png" alt="" class="img-responsive"></div>
 										<div class="boxContent">
 											<h3>Carlos Guerrero Urbina</h3>
 											<p>Jefe Área Fasta</p>
@@ -271,7 +272,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/daniel.png" alt="" class="img-responsive"></div>
 										<div class="boxContent">
 											<h3>Daniel Gutierrez Pizarro</h3>
 											<p>Documentador Área Fasta</p>
@@ -280,7 +281,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-1.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/rodrigo_a.png" alt="" class="img-responsive"></div>
 										<div class="boxContent text-center">
 											<h3>Rodrigo Arratia Allende</h3>
 											<p>Desarrollador Área Fasta</p>
@@ -289,7 +290,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-2.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/manolo.png" alt="" class="img-responsive"></div>
 										<div class="boxContent text-center">
 											<h3>Manuel Venegas Solis</h3>
 											<p>Jefe Área Torah</p>
@@ -298,7 +299,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-3.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/miguel.png" alt="" class="img-responsive"></div>
 										<div class="boxContent  text-center">
 											<h3>Miguel Nuñez Gajardo</h3>
 											<p>Desarrollador Área Torah</p>
@@ -307,7 +308,7 @@
 								</div>
 								<div class="col-sm-3">
 									<article>
-										<div><img src="images/team/team-corporate-4.jpg" alt="" class="img-responsive"></div>
+										<div><img src="images/team/rodrigoR.png" alt="" class="img-responsive"></div>
 										<div class="boxContent">
 											<h3>Rodrigo Reyes Silva</h3>
 											<p>Documentador Área Torah</p>
