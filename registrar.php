@@ -105,7 +105,7 @@ if($_POST){
 														</div>
 														<div class="form-group">
 															<label for="password">Contraseña</label>
-															<input name="password" class="form-control required" type="password" id="password" size="30" value="" placeholder="Ingrese su contraseña telefónico" title="Las contraseñas deben coincidir">
+															<input name="password" class="form-control required" type="password" id="password" size="30" value="" placeholder="Ingrese su contraseña" title="Las contraseñas deben coincidir">
 														</div>
 														<div class="form-group">
 															<label for="password">Repetir Contraseña</label>

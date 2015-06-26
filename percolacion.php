@@ -102,41 +102,33 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="ctaBox ctaBox2Cols color2">
+										<h1>Formulario de Percolación para Incendios Forestales</h1>
 										<div class="col-lg-12">
-											<form method="post" action="controlador.php" id="postComment" role="form"  enctype="multipart/form-data">
+											<form method="post" action="controlador.php" id="form-ppi" role="form"  enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-ppi">
 												<div class="col-lg-3">
-														<div class="form-group">
-															<label for="opcion">Elija el Area a la que quiere aplicar percolación</label>
-															<input type="radio" name="opcion" id="incendio" value="incendio" checked> Incendios 
-															<input type="radio" name="opcion" id="enfermedades" value="enfermedades"> Enfermedades
-														</div>
+													<div class="form-group">
+														<label for="tipoArbol">Tipo Arbol</label>
+														<select class="form-control" name="tipoArbol" id="tipoArbol">
+															<option value="">Seleccione un Arbol</option>
+															<option value="1">Quillay</option>
+															<option value="2">Peumo</option>
+															<option value="3">Boldo</option>
+															<option value="4">Roble</option>
+															<option value="5">Rauli</option>
+														</select>
 													</div>
-												<div id="percolacion">
-													<input type="hidden" name="algoritmo" id="algoritmo" value="-ppi">
-													<div class="col-lg-3">
-														<div class="form-group">
-															<label for="tipoArbol">Tipo Arbol</label>
-															<select class="form-control" name="tipoArbol" id="tipoArbol">
-																<option value="">Seleccione un Arbol</option>
-																<option value="1">Quillay</option>
-																<option value="2">Peumo</option>
-																<option value="3">Boldo</option>
-																<option value="4">Roble</option>
-																<option value="5">Rauli</option>
-															</select>
-														</div>
-													</div>
-													<div class="col-lg-3">
-														<div class="form-group">
-															<label for="name">Tipo Suelo</label>
-															<select class="form-control" name="tipoSuelo" id="tipoSuelo">
-																<option value="">Seleccione un Suelo</option>
-																<option value="1">Serranias aridas o semiaridas</option>
-																<option value="2">Granitico de la costa</option>
-																<option value="3">Vetisoles</option>
-																<option value="4">Aluviales del valle central</option>
-															</select>
-														</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="name">Tipo Suelo</label>
+														<select class="form-control" name="tipoSuelo" id="tipoSuelo">
+															<option value="">Seleccione un Suelo</option>
+															<option value="1">Serranias aridas o semiaridas</option>
+															<option value="2">Granitico de la costa</option>
+															<option value="3">Vetisoles</option>
+															<option value="4">Aluviales del valle central</option>
+														</select>
 													</div>
 												</div>
 												<div class="col-lg-3">
@@ -170,6 +162,69 @@
 												<div class="col-lg-2">
 													<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
 												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="ctaBox ctaBox2Cols color2">
+										<div class="col-lg-12">
+											<h1>Formulario de Percolación para Enfermedades</h1>
+											<form method="post" action="controlador.php" id="form-ppe" role="form"  enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-ppe">
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="tipoArbol">Tipo Enfermedad</label>
+														<select class="form-control" name="tipoEnfermedad" id="tipoEnfermedad">
+															<option value="">Seleccione un Enfermedad</option>
+															<option value="1">Gripe</option>
+															<option value="2">Sarampión</option>
+															<option value="3">Meningitis</option>
+															<option value="4">Pediculosis</option>
+															<option value="5">Paperas</option>
+															<option value="6">AH1N1</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="email">Email</label>
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email *">
+													</div>
+												</div>
+												<div class="col-lg-1">
+													<div class="form-group">
+														<label for="distribucion">Distribución</label>
+														<input type="text" class="form-control" name="distribucion" id="distribucion" placeholder="%">
+														<!--<div class="input-group">
+							                                <input class="form-control" type="text" data-mask="99%">
+							                                <span class="input-group-addon">99%</span>
+							                            </div>-->
+													</div>
+												</div>
+												<div class="col-lg-1">
+													<div class="form-group">
+														<label for="tamano">Tamaño</label>
+														<input type="text" class="form-control" name="tamano" id="tamano" placeholder="">
+													</div>
+												</div>
+												<div class="col-lg-1">
+													<div class="form-group">
+														<label for="size">Size</label>
+														<input type="text" class="form-control" name="size" id="size" placeholder="">
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="row">
+													<div class="col-lg-2">
+														<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
+													</div>
+												</div>
+												</div>
+												
 											</form>
 										</div>
 									</div>

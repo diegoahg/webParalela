@@ -13,6 +13,7 @@ if($_POST){
 	
 	if(count($result)==1){
 		//var_dump($result);
+		$_SESSION["id"] = $result[0]["id"];
 		$_SESSION["nombre"] = $result[0]["nombre"];
 		$_SESSION["password"] = $result[0]["password"];
 		$_SESSION["email"] = $result[0]["email"];

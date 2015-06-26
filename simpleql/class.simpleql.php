@@ -215,9 +215,9 @@ class Mysql {
 	public function inserTable($table,$arreglo){
 		$fields = array_keys($arreglo);
 		foreach($arreglo as $value) $values[] = $this->escape($value);
-		var_dump($values);
+		//var_dump($values);
 		$query = "INSERT INTO `{$table}` (`" . implode("`,`",$fields) . "`) VALUES ('" . implode("','",$values) . "')";
-		var_dump($query);
+		//var_dump($query);
 	return ($this->consulta($query))? $this->getID() : false ;
 	}
 	

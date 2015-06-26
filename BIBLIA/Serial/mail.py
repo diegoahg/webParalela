@@ -1,7 +1,7 @@
 import requests
 
 
-def envio_mail_paralelo_implicito(largo, pdf, keyword, jumpMax, email):
+def envio_mail_serial_implicito(largo, pdf, keyword, jumpMax, email):
     pdf = pdf.upper()
     return requests.post(
         "https://api.mailgun.net/v3/sandbox3761d267c8184fa2afb562ff83f8881e.mailgun.org/messages",

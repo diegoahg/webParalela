@@ -243,15 +243,7 @@
 										</div>
 									</article>
 								</div>
-								<div class="col-sm-3">
-									<article>
-										<div><img src="images/team/pina.png" alt="" class="img-responsive"></div>
-										<div class="boxContent">
-											<h3>Claudio Piña Novoa</h3>
-											<p>Desarrollador Área Percolación</p>
-										</div>
-									</article>
-								</div>
+								
 								<div class="col-sm-3">
 									<article>
 										<div><img src="images/team/rosa.png" alt="" class="img-responsive"></div>
@@ -312,6 +304,15 @@
 										<div class="boxContent">
 											<h3>Rodrigo Reyes Silva</h3>
 											<p>Documentador Área Torah</p>
+										</div>
+									</article>
+								</div>
+								<div class="col-sm-3">
+									<article>
+										<div><img src="images/team/Piña.jpg" alt="" class="img-responsive"></div>
+										<div class="boxContent">
+											<h3>Claudio Piña Novoa</h3>
+											<p>Desarrollador Área Percolación</p>
 										</div>
 									</article>
 								</div>

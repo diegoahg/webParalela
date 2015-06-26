@@ -93,7 +93,7 @@
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
-									<p>Manuel Mal-Jefe Venegas</p>
+									<p>Manuel Alejandro Venegas</p>
 									<p>Miguel Angel Nuñez</p>
 									<p>Rodrigo Reyes Silva</p>
 									<h2>Technology</h2>
@@ -110,8 +110,9 @@
 								<div class="col-md-12">
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
-											<form method="post" action="controlador.php" id="postComment" role="form" enctype="multipart/form-data">
-												<input type="hidden" name="algoritmo" id="algoritmo" value="-pbi">
+											<form method="post" action="controlador.php" id="form-pbe" role="form" enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pbe">
+												<h1>Busqueda Explicita (con patron)</h1>
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
@@ -120,7 +121,7 @@
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
-														<label for="name">Cantidad de Salto</label>
+														<label for="name">Salto Maximo</label>
 														<select class="form-control" name="saltos" id="saltos">
 															<option value="">Seleccione un Cantidad</option>
 															<?php for($i=400; $i > 1; $i=$i- 50){?>
@@ -150,6 +151,56 @@
 												</div>
 												<div class="col-lg-2">
 													<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="ctaBox ctaBox2Cols color2">
+										<div class="col-lg-12">
+											<form method="post" action="controlador.php" id="form-pbi" role="form" enctype="multipart/form-data">
+												<h1>Busqueda Implicita (en base a diccionarios de palabras)</h1>
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pbi">
+												<div class="col-lg-12">
+													<div class="form-group">
+														<label for="tipoArbol">Subir Archivo</label>
+														<input name="documento" type="file">
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="name">Salto Maximo</label>
+														<select class="form-control" name="saltos" id="saltos">
+															<option value="">Seleccione un Cantidad</option>
+															<?php for($i=50; $i > 1; $i=$i- 5){?>
+															<option name= "<?php echo $i; ?>" value = "<?php echo $i; ?>"><?php echo $i;?></option>
+															
+															<?php } ?>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="email">Email</label>
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email *">
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="size">Size</label>
+														<input type="text" class="form-control" name="size" id="size" placeholder="">
+													</div>
+												</div><br>
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="form-group">
+															<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
+														</div>
+													</div>
 												</div>
 											</form>
 										</div>

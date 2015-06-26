@@ -1,7 +1,7 @@
 <?php
 //var_dump($_POST["algoritmo"]);
 $output = array(); //contendrá cada linea salida desde la aplicación en Python
-//var_dump($_POST);
+
 //error_reporting(E_ALL);
 //ini_set('display_errors','on');
 include("simpleql/class.simpleql.php");
@@ -123,7 +123,12 @@ switch($_POST["algoritmo"]){
 		    $pdf = basename($_FILES['documento']['name']);
 		    $archivo = explode(".", $pdf);
 		    //echo $archivo[0];
-		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/torah-code/web/implicitParalell.py ".$archivo[0]." ".$_POST['saltos']." ".$_POST['email']."";
+		    
+		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/torah-code/web/explicitParalell.py "."hola houu doio odjdo do mayo"." \"" .$_POST['patron']. "\" ".$_POST['$
+                    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/torah-code/web/explicitParalell.py "."hola huytt ohyyy yoi mayo"." \"" .$_POST['patron']. "\" ".$_POST['$
+                    
+	            $comando = "sudo -u paralela /usr/bin/python3 /mpi/BIBLIA/torah-code/web/implicit.py ".$archivo[0]." ".$_POST['saltos']." ".$_POST['email']."";
+		    
 		    echo "<a href='00-ironman.clustermarvel.utem/webParalela/BIBLIA/index.php?pagina=2&file=".$archivo[0]."&pattern=implicito'> Respuesta</a>";
                     //echo "<br>[" . $comando . "]<br>";
 		   

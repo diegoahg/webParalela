@@ -110,8 +110,88 @@
 								<div class="col-md-12">
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
-											<form method="post" action="controlador.php" id="postComment" role="form"  enctype="multipart/form-data">
-												<input type="hidden" name="algoritmo" id="algoritmo" value="-pf">
+											<h1>Formulario de Fasta para ADN</h1>
+											<form method="post" action="controlador.php" id="form-pfa" role="form"  enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pfa">
+												<div class="col-lg-12">
+													<div class="form-group">
+														<label for="tipoArbol">Subir Archivo</label>
+														<input name="documento" type="file" require>
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="name">Matriz Sustituci&oacuten</label>
+														<select class="form-control" name="matriz" id="matriz">
+															<option name= "pam60" value="pam60">Pam60</option>
+															<option name= "pam120" value="pam120">Pam120</option>
+															<option name= "pam180" value="pam180">Pam180</option>
+															<option name= "pam250" value="pam250">Pam250</option>
+															<option name= "pam30" value="pam30">Pam30</option>
+															<option name= "pam300" value="pam300">Pam300</option>
+															<option name= "pam90" value="pam90">Pam90</option>
+															<option name= "blosum30" value="blosum30">Blosum30</option>
+															<option name= "blosum35" value="blosum35">Blosum35</option>
+															<option name= "blosum40" value="blosum40">Blosum40</option>
+															<option name= "blosum45" value="blosum45">Blosum45</option>
+															<option name= "blosum50" value="blosum50">Blosum50</option>
+															<option name= "blosum55" value="blosum55">Blosum55</option>
+															<option name= "blosum60" value="blosum60">Blosum60</option>
+															<option name= "blosum62" value="blosum62">Blosum62</option>
+															<option name= "blosum65" value="blosum65">Blosum65</option>
+															<option name= "blosum70" value="blosum70">Blosum70</option>
+															<option name= "blosum75" value="blosum75">Blosum75</option>
+															<option name= "blosum80" value="blosum80">Blosum80</option>
+															<option name= "blosum85" value="blosum85">Blosum85</option>
+															<option name= "blosum90" value="blosum90">Blosum90</option>
+															<option name= "blosum95" value="blosum95">Blosum95</option>
+															<option name= "blosum100" value="blosum100">Blosum100</option>
+															<option name= "benner6" value="benner6">Benner6</option>
+															<option name= "benner22" value="benner22">Benner22</option>
+															<option name= "benner74" value="benner74">Benner74</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-3">
+													<div class="form-group">
+														<label for="email">Email</label>
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email *" require>
+													</div>
+												</div>
+												<div class="col-lg-2">
+													<div class="form-group">
+														<label for="distribucion">Penalización -1 -10</label> 
+														<input type="text" class="form-control" name="penalizacion" id="penalizacion" placeholder="" require>
+													</div>
+												</div>
+												<div class="col-lg-2">
+													<div class="form-group">
+														<label for="tamano">Numero Resultado</label>
+														<input type="text" class="form-control" name="resultado" id="resultado" placeholder="" require>
+													</div>
+												</div>
+												<div class="col-lg-2">
+													<div class="form-group">
+														<label for="size">Size</label>
+														<input type="text" class="form-control" name="size" id="size" placeholder="" require>
+													</div>
+												</div>
+												<div class="col-lg-2">
+													<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="ctaBox ctaBox2Cols color2">
+										<div class="col-lg-12">
+											<h1>Formulario de Fasta para Proteinas</h1>
+											<form method="post" action="controlador.php" id="form-pfp" role="form"  enctype="multipart/form-data">
+												<input type="hidden" name="algoritmo" id="algoritmo" value="-pfp">
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
