@@ -276,7 +276,8 @@ def run():
         print("Paramatros Generados!")
 
         # Generar PDF
-        # Principal(info, stats, match)
+        crearPDF(pdf, keyword, "Explicita", jumpMax,
+             tiempo_final, len(match), 1, stats, info)
         print("Documento PDF creado!")
 
         # Envio de Mail

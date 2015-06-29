@@ -5,6 +5,7 @@ from time import *
 import sys
 import json
 from run_pdf import Principal
+from pdf import crearPDF
 
 # Se lee el argumento 2 con el nombre del documento pdf
 pdf = str(sys.argv[1])
@@ -52,7 +53,8 @@ else:
     print("\tResultado Final : ", len(match), ".")
     print(
         "\n*****************************************************************************\n")
-    print("\tTiempo estimado de ejecucion: ", round(time() - start, 3),
+    tiempo_final = round(time() - start, 3)
+    print("\tTiempo estimado de ejecucion: ", tiempo_final,
           " segundos. En recorrer ", len(txt), " paginas. Salto Maximo: ", jumpMax, ".")
     print(
         "\n*****************************************************************************\n")
@@ -120,6 +122,8 @@ else:
 
     # Generar PDF
     # Principal(info, stats, match)
+    crearPDF(pdf, keyword, "Explicita", jumpMax,
+             tiempo_final, len(match), 1, stats, info)
     print("Documento PDF creado!")
 
     # Envio de Mail
