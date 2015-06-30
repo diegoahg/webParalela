@@ -66,7 +66,6 @@
 									
 									// MAXIMO DE ANCHO DE LA MATRIZ DE SALIDA
 									$maximo_linea = 40;
-									$limite_resultados = 17;
 								    
 								    $archivo = $_GET["file"];
 								    if($archivo == "prueba"){ $maximo_linea=10;}
@@ -94,6 +93,7 @@
 									// Colores para mostrar coincidencias
 									$colores = ["red","blue","green","brown","orange","fuchsia","purple","yellow","black","lime","olive","maroon","navy","teal","gray","silver","black"];
 									$color = 0;
+									$limite_resultados = count($colores);
 
 									// Proceso lectura texto
 									$string = file_get_contents("./Textos/".$archivo.".txt",true);

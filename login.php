@@ -64,14 +64,18 @@ if($_POST){
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
-									<a href="codigos.php" class="firstLevel hasSubMenu" >Codigos</a>
+									<a href="codigos.php" class="firstLevel hasSubMenu" >Servicios</a>
 									<ul class="subMenu">
-										<li><a href="percolacion.php">Perocolación</a></li>
-										<li><a href="fasta.php">Fasta</a></li>
-										<li><a href="biblia.php">Codigo de la Biblia</a></li>
+										<li><a href="enfermedades.php">Enfermedades</a></li>
+										<li><a href="incendios.php">Incendios</a></li>
+										<li><a href="explicito.php">Busqueda Explicita</a></li>
+										<li><a href="implicito.php">Busqueda Implicita</a></li>
+										<li><a href="adn.php">ADN</a></li>
+										<li><a href="proteinas.php">Proteinas</a></li>
 									</ul>
 								</li>
 								<li class="sep"></li>
+								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
 							</ul>
 							<!-- End main navigation -->

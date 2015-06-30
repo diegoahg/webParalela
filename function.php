@@ -20,7 +20,7 @@ function EsUsuario(){
 		}
 	}
 	else{
-		echo $_SESSION["email"];
+		//echo $_SESSION["email"];
 		echo "No tienes permiso para estar aqui 2";
 		sleep(10);
 		header("Location: /webParalela/login.php");
