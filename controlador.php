@@ -23,16 +23,19 @@ switch($_POST["algoritmo"]){
 		$comando = "sudo -u paralela mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/Percolacion/perFinal/paralelo.py ".$_POST["tipoArbol"]." ".$_POST["tipoSuelo"]." ".$_POST["distribucion"]." ".$_POST["tamano"]." ".$_POST["email"]." ".$output;
 		//echo "<br>[".$comando."]<br>";
 		$simpleql = new Mysql();
+		//echo $_SESSION["id"];
 		$arreglo = array('id_usuario' => addslashes($_SESSION["id"]),
-					'enfermedad' => "asda",
+					'arbol' => addslashes($_POST["tipoArbol"]),
+					'suelo' => addslashes($_POST["tipoSuelo"]),
 					'documento' => $output,
-					'tamaño' => addslashes($_POST["tamano"]),
+					'tipo' => "-ppi",
+					'tamano' => addslashes($_POST["tamano"]),
 					'distribucion' => addslashes($_POST["distribucion"]),
 					'size' => addslashes($_POST["size"])
 					);
-		$result = $simpleql->inserTable("historial_enfermedades", $arreglo);
-		var_dump($result);
-		//exec($comando);
+		$result = $simpleql->inserTable("historial_percolacion", $arreglo);
+		//var_dump($result);
+		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		break;
 	case "-ppe":
 		$output = "pe".date("Ymshis");
@@ -45,15 +48,15 @@ switch($_POST["algoritmo"]){
 					'arbol' => 0,
 					'suelo' => 0,
 					'distribucion' => addslashes($_POST["distribucion"]),
-					'tamaño' => addslashes($_POST["tamano"]),
+					'tamano' => addslashes($_POST["tamano"]),
 					'size' => addslashes($_POST["size"]),
 					'documento' => $output,
 					'tipo' => "-ppe",
 					'enfermedad' =>  addslashes($_POST["tipoEnfermedad"])
 					);
 		$result = $simpleql->inserTable("historial_percolacion", $arreglo);
-		var_dump($result);
-		//exec($comando);
+		//var_dump($result);
+		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		break;
 	case "-pfa":
 		$uploaddir = '/var/www/html/webParalela/FASTA/';
@@ -61,7 +64,7 @@ switch($_POST["algoritmo"]){
 
 		if (move_uploaded_file($_FILES['documento']['tmp_name'], $uploadfile)) {
 			$output = "FastaADN".date("Ymshis");
-			echo $output."<br>";
+			//echo $output."<br>";
 		    $archivo = $uploadfile;
 		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo.py ".$archivo." matlist.".$_POST['matriz']." ".$_POST['penalizacion']." ".$_POST['resultado']." ".$_POST['email']." ".$output;
 			$simpleql = new Mysql();
@@ -75,7 +78,7 @@ switch($_POST["algoritmo"]){
 						);
 			$result = $simpleql->inserTable("historial_fasta", $arreglo);
 			    //echo "<br>[".$comando."]<br>";
-		    //exec($comando);
+		    exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		} else {
 		    echo "¡Posible ataque de carga de archivos!\n";
 		    exit(0);
@@ -83,7 +86,7 @@ switch($_POST["algoritmo"]){
 		
 		//break;
 		//$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python ";
-		//exec($comando);
+		//exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		break;
 	case "-pfp":
 		$uploaddir = '/var/www/html/webParalela/FASTA/';
@@ -91,7 +94,7 @@ switch($_POST["algoritmo"]){
 
 		if (move_uploaded_file($_FILES['documento']['tmp_name'], $uploadfile)) {
 			$output = "FastaPRO".date("Ymshis");
-			echo $output."<br>";
+			//echo $output."<br>";
 		    $archivo = $uploadfile;
 		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo_prote.py ".$archivo." matlist.".$_POST['matriz']." ".$_POST['penalizacion']." ".$_POST['resultado']." ".$_POST['email']." ".$output;
 		    //echo "<br>[".$comando."]<br>";
@@ -105,13 +108,13 @@ switch($_POST["algoritmo"]){
 						'tipo' => "-pfp"
 						);
 			$result = $simpleql->inserTable("historial_fasta", $arreglo);
-		    //exec($comando);
+		    exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		} else {
 		    echo "¡Posible ataque de carga de archivos!\n";
 		    exit(0);
 		}
 		//$comando = "mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python ";
-		//exec($comando);
+		//exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		
 		break;
 	case "-pbi":
@@ -124,9 +127,9 @@ switch($_POST["algoritmo"]){
 		    $pdf = basename($_FILES['documento']['name']);
 		    $archivo = explode(".", $pdf);
 		    //echo $archivo[0];
-		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/torah-code/web/implicitParalell.py ".$archivo[0]." ".$_POST['saltos']." ".$_POST['email']."";
-		    echo "<a href='00-ironman.clustermarvel.utem/webParalela/BIBLIA/index.php?pagina=2&file=".$archivo[0]."&pattern=implicito'> Respuesta</a>";
-                    //echo "<br>[" . $comando . "]<br>";
+		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/implicitParalell.py ".$archivo[0]." ".$_POST['saltos']." ".$_POST['email']." ".$output;
+		    //echo "<a href='00-ironman.clustermarvel.utem/webParalela/BIBLIA/index.php?pagina=2&file=".$archivo[0]."&pattern=implicito'> Respuesta</a>";
+            //echo "<br>[" . $comando . "]<br>";
 		   
 		} else {
 		    echo "¡Posible ataque de carga de archivos!\n";
@@ -143,7 +146,7 @@ switch($_POST["algoritmo"]){
 					'tipo' => "-pbi"
 					);
 		$result = $simpleql->inserTable("historial_torah", $arreglo);
-		//exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		//echo "<h3> Se ha enviado al correo </h3><b>". $_POST['email']."</b> la busqueda Implicita. <h3>Se adjunta documento pdf con estadisticas encontradas. Saludos.</h3>";
 		//echo "\n<a href='biblia.php'>Regresar</a>";
 		//
@@ -158,7 +161,7 @@ switch($_POST["algoritmo"]){
 		    $pdf = basename($_FILES['documento']['name']);
 		    $archivo = explode(".", $pdf);
 		    //echo $archivo[0];
-		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/torah-code/web/explicitParalell.py ".$archivo[0]." \"" .$_POST['patron']. "\" ".$_POST['saltos']." ".$_POST['email']."";
+		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python3 /mpi/BIBLIA/explicitParalell.py ".$archivo[0]." \"" .$_POST['patron']. "\" ".$_POST['saltos']." ".$_POST['email']." ".$output;
 		    //echo "<br>[".$comando."]<br>";
 		   
 		} else {
@@ -177,7 +180,7 @@ switch($_POST["algoritmo"]){
 		$result = $simpleql->inserTable("historial_torah", $arreglo);
 		//var_export(getcwd());
 		//var_export($comando);
-		//exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
 		//echo "<h3> Se ha enviado al correo </h3><b>". $_POST['email']."</b> la busqueda Explicita. <h3>Se adjunta documento pdf con estadisticas encontradas. Saludos.</h3>";
 		//echo "\n<a href='biblia.php'>Regresar</a>";
 		//
@@ -218,11 +221,11 @@ switch($_POST["algoritmo"]){
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel  hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
-									<a href="codigos.php" class="firstLevel hasSubMenu" >Servicios</a>
+									<a href="codigos.php" class="firstLevel active hasSubMenu" >Servicios</a>
 									<ul class="subMenu">
 										<li><a href="enfermedades.php">Enfermedades</a></li>
 										<li><a href="incendios.php">Incendios</a></li>
@@ -235,6 +238,11 @@ switch($_POST["algoritmo"]){
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -252,7 +260,7 @@ switch($_POST["algoritmo"]){
 							<a href="javascript:history.go(-1)" class="btn btn-sm btn-inverse"><i class="icon-left-open-mini"></i>back</a>
 						</div>  
 						<div class="col-xs-10 col-sm-10 col-md-11 projectTitle">
-							<h1>Paralela</h1>
+							<h1><?= $_SESSION["nombre"]." ".$_SESSION["apellidos"]?></h1>
 							<p>Computación Paralela Primer Semestre 2015</p>
 							<ul class="breadcrumb visible-md visible-lg">
 								<li><a href="index.php">Home</a></li>
@@ -276,9 +284,9 @@ switch($_POST["algoritmo"]){
 									<div class="ctaBox color2" data-nekoanim="bounceIn" data-nekodelay="100">
 										<div class="ctaBoxText">
 											<h1>
-												Proceso realizado con éxito!
+												Su requerimiento esta siendo procesado.
 											</h1>
-											<h2>Los resultados del proceso han sido enviados al correo registrado.
+											<h2>Una vez terminado, seran enviados los resultados a su correo electronico
 											<a href="javascript:history.go(-1)" class="btn btn-sm btn-inverse"><i class="icon-left-open-mini"></i>back</a>
 											</h2>
 										</div>

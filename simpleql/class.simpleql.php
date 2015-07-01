@@ -216,7 +216,7 @@ class Mysql {
 		$fields = array_keys($arreglo);
 		foreach($arreglo as $value) $values[] = $this->escape($value);
 		$query = "INSERT INTO `{$table}` (`" . implode("`,`",$fields) . "`) VALUES ('" . implode("','",$values) . "')";
-		echo $query;
+		//echo $query;
 	return ($this->consulta($query))? $this->getID() : false ;
 	}
 	

@@ -100,7 +100,7 @@ if($_POST){
 											<h1>
 												Login
 											</h1>
-											<h2>Ingresa a consumir nuestros servicios.
+											<h2>Ingresa a utilizar nuestros servicios.
 											</h2>
 										</div>
 										<?php echo $advertencia; ?>
@@ -116,10 +116,16 @@ if($_POST){
 														<label for="password">Contraseña</label>
 														<input name="password" class="form-control required" type="password" id="password" size="30" value="" placeholder="Ingrese su contraseña" title="Las contraseñas deben coincidir">
 													</div>
-												</div>                    
+												</div>
+
 												<div class="col-md-8 col-md-offset-4">
 													<div class="result"></div>
+													<a href="registrar.php">Obtener una cuenta</a>
 													<button name="submit" type="submit" class="btn btn-lg" id="submit"> Ingresar</button>
+												</div>
+												<div class="col-md-12">
+													<div class="result"></div>
+													
 												</div>
 											</form>
 											</div>

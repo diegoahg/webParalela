@@ -2,7 +2,7 @@
 	include("simpleql/class.simpleql.php");
 	session_start();
 	require_once("function.php");
-	//EsUsuario();
+	EsUsuario();
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -38,11 +38,11 @@
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
-									<a href="codigos.php" class="firstLevel hasSubMenu" >Servicios</a>
+									<a href="codigos.php" class="firstLevel active hasSubMenu" >Servicios</a>
 									<ul class="subMenu">
 										<li><a href="enfermedades.php">Enfermedades</a></li>
 										<li><a href="incendios.php">Incendios</a></li>
@@ -55,6 +55,11 @@
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -72,17 +77,18 @@
 							<a href="javascript:history.go(-1)" class="btn btn-sm btn-inverse"><i class="icon-left-open-mini"></i>back</a>
 						</div>  
 						<div class="col-xs-10 col-sm-10 col-md-11 projectTitle">
-							<h1>Fasta</h1>
+							<h1><?= $_SESSION["nombre"]." ".$_SESSION["apellidos"]?></h1>
 							<p>Computación Paralela Primer Semestre 2015</p>
 							<ul class="breadcrumb visible-md visible-lg">
 								<li><a href="index.php">Home</a></li>
 								<li><a href="codigos.php">Codigos</a></li>
-								<li class="active">Fasta</li>
+								<li class="active">Cadenas ADN</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</header>
+			<div id="solicitud">
 
 				<!-- works -->
 				<section class="pt30 pb30 mb15">
@@ -92,18 +98,19 @@
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<h1>Formulario de Fasta para ADN</h1>
-											<form method="post" action="controlador.php" id="form-pfa" role="form"  enctype="multipart/form-data">
+											<form id="form-pfa" method="post" action="controlador.php"role="form"  enctype="multipart/form-data">
 												<input type="hidden" name="algoritmo" id="algoritmo" value="-pfa">
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
-														<input name="documento" type="file" require>
+														<input name="documento" id="documento" type="file" require>
 													</div>
 												</div>
-												<div class="col-lg-3">
+												<div class="col-lg-4">
 													<div class="form-group">
 														<label for="name">Matriz Sustituci&oacuten</label>
 														<select class="form-control" name="matriz" id="matriz">
+															<option name= "" value="">Seleccionar Matriz</option>
 															<option name= "pam60" value="pam60">Pam60</option>
 															<option name= "pam120" value="pam120">Pam120</option>
 															<option name= "pam180" value="pam180">Pam180</option>
@@ -136,7 +143,7 @@
 												<div class="col-lg-3">
 													<div class="form-group">
 														<label for="email">Email</label>
-														<input type="email" class="form-control" name="email" id="email" placeholder="Email *" require>
+														<input type="email" class="form-control" name="email" id="email" value="<?php echo $_SESSION["email"]; ?>" placeholder="Email *" require>
 													</div>
 												</div>
 												<div class="col-lg-2">
@@ -151,14 +158,12 @@
 														<input type="text" class="form-control" name="resultado" id="resultado" placeholder="" require>
 													</div>
 												</div>
-												<div class="col-lg-2">
-													<div class="form-group">
-														<label for="size">Size</label>
-														<input type="text" class="form-control" name="size" id="size" placeholder="" require>
+												<input type="hidden" class="form-control" name="size" id="size" value="95"></label>
+													
+												<div class="row">
+													<div class="col-lg-12">
+														<button class="btn btn-succes" id="enviar" type="submit" name="submitComment">Enviar</button>
 													</div>
-												</div>
-												<div class="col-lg-2">
-													<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
 												</div>
 											</form>
 										</div>
@@ -172,13 +177,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<img src="images/portfolio/fasta.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
+							<img src="images/portfolio/adn.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 col-sm-4">
-									<h1>Fasta</h1>
-									<p> Módulo destinado a obtención de secuencias de ADN o Proteínas que posean un mayor porcentaje de similitud en relación a la secuencia entrante. Mediante la alineación de estas cadenas y sus datos asociados, es posible otorgar información de gran relevancia para el análisis científico.</p>
+									<h1> Comparacion de Cadenas de ADN</h1>
+									<p> El algoritmo FASTA es un método heurístico para comparación de cadenas donde compara una cadena de consulta con una cadena de un solo texto. Cuando buscamos en una base de datos entera coincidencias para una consulta dada, comparamos la consulta usando el algoritmo FASTA para cada cadena en la base de datos. Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.</p>
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
@@ -193,6 +198,7 @@
 					</div>
 				</div>
 				</section>
+			</div>
 			</section>
 		<!-- content -->
 		<!-- footer -->
@@ -203,5 +209,61 @@
 	<!-- End Document 
 	================================================== -->
 	<?php require_once("js.php"); ?>
+	<script type="text/javascript">
+		$("#form-pfa").validate({
+	           rules: {
+	                email: { 
+	                 	required: true,
+      					email: true
+	                } ,
+	                matriz: { 
+	                 	required: true
+	                } ,
+	                penalizacion: { 
+	                 	required: true,
+	                 	range: [-10,-1]
+	                } ,
+	                resultado: { 
+	                 	required: true,
+	                 	number: true
+	                } ,
+	                documento: { 
+	                 	required: true
+	                } ,
+	                
+
+
+	           },
+	     messages:{
+	        email: { 
+	                 required:"Debe escribir un correo correcto"
+	               },
+           	matriz: { 
+             		required:"Campo requerido"
+           			},
+           	penalizacion: { 
+             		required:"Campo requerido",
+             		range: "El rango debe ser entre -10 y -1"
+           			},
+           	resultado: { 
+             		required:"Campo requerido",
+             		number: "Ingresar solo numeros enteros"
+           			},
+           	documento:  "Ingrese un archivo fasta"
+	     }
+	     });
+	$("#enviar").click(function(){
+       var validado = $("#form-pfa").valid();
+       console.log(validado);
+       if(validado){
+       		$.get( "exito.php", function( data ) {
+					  $("#solicitud").html(data);
+					});
+       }
+    });
+
+
+	</script>
+
 </body>
 </html>

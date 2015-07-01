@@ -1,3 +1,12 @@
+<?php
+	error_reporting(E_ALL);
+	ini_set('display_errors','on');	
+	include("simpleql/class.simpleql.php");
+	session_start();
+	//require_once("function.php");
+	//EsUsuario();
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -32,7 +41,7 @@
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel  hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
@@ -48,7 +57,12 @@
 								</li>
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
-								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel active last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>

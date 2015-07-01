@@ -1,3 +1,12 @@
+<?php
+	error_reporting(E_ALL);
+	ini_set('display_errors','on');	
+	include("simpleql/class.simpleql.php");
+	session_start();
+	//require_once("function.php");
+	//EsUsuario();
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -48,6 +57,11 @@
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -63,7 +77,7 @@
 					<div class="row">
 						<div class="col-md-4" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
 							<h1>Plataforma de Servicios</h1>
-							<p>Computación Paralela, primer semestre 2015</p>
+							<p>Favor de iniciar sesión para utilizar nuestros servicios</p>
 								<a href="registrar.php" target="_blank" class="btn btn-lg">Registrarse</a>
 								<a href="login.php" target="_blank" class="btn btn-lg">Login</a>
 							</div>
@@ -74,12 +88,148 @@
 					</div>
 				</section>
 				<section id="content">
+					
+					<!-- section 1 -->
+					<section class="color1">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<img src="/webParalela/images/portfolio/forestalin.jpg" alt="paralela 2015" class="img-responsive" />
+								</div>
+								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<h1>Incendios Forestales</h1>
+									<p>
+										Por medio de este servicio, simularemos un incendio forestal. Es necesario que se ingrese el tipo de árbol y de suelo, el tamaño de la región y la distribución de los arboles. Ademas se realizan repeticiones que aseguran un error máximo de 5% de respuesta. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 1 -->
+					<!-- section 2 -->
+					<section>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<h1>Propagación Enfermedades</h1>
+									<p>
+										A través de modelo simple de propagación de enfermedades basado en el concepto de umbral de percolación, se realizara una simulacion de las probabilidad de contagio que tendrian algunas enfermedades, como por ejemplo: gripe, AH1N1, sarampion, etc. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<img src="images/portfolio/enfermedadesin.jpg" alt="flat mobile devices" class="img-responsive"/>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 2 -->
+					<!-- section 3 -->
+					<section class="color1">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<img src="images/portfolio/explicitain.jpg" alt="paralela 2015" class="img-responsive" />
+								</div>
+								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<h1>Busqueda Explicita Patrones</h1>
+									<p>
+										Por medio de esta plataforma, usted podrá realizar búsquedas de palabras en los libros de nuestra biblioteca, cabe mencionar que esta búsqueda tiene la particularidad de buscar a través de saltos, es decir, en letras que no estén contiguas, sino que estén separadas. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 3 -->
+					<!-- section 4 -->
+					<section>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<h1>Busqueda Implicita de Patrones</h1>
+									<p>
+										Este algoritmo no tiene ingreso de palabras, ya que su búsqueda se sustenta en una base de conocimiento; sin embargo, el único dato de entrada de éste algoritmo es el archivo pdf. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<img src="images/portfolio/implicitain.jpg" alt="flat mobile devices" class="img-responsive"/>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 4 -->
+					<!-- section 5 -->
+					<section class="color1">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<img src="images/portfolio/adnin.jpg" alt="paralela 2015" class="img-responsive" />
+								</div>
+								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<h1>Comparacion Cadena de ADN</h1>
+									<p>
+										El algoritmo FASTA es un método heurístico para comparación de cadenas donde compara una cadena de consulta con una cadena de un solo texto. Cuando buscamos en una base de datos entera coincidencias para una consulta dada, comparamos la consulta usando el algoritmo FASTA para cada cadena en la base de datos. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 5 -->
+					<!-- section 6 -->
+					<section>
+						<div class="container">
+							<div class="row">
+								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
+									<h1>Comparacion Cadenas de Proteinas</h1>
+									<p>
+										Un alineamiento de secuencias en bioinformática es una forma de representar y comparar dos o más secuencias o cadenas de estructuras primarias proteicas para resaltar sus zonas de similitud, que podrían indicar relaciones funcionales o evolutivas entre los genes o proteínas consultados. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.
+									</p>
+								</div>
+								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
+									<img src="images/portfolio/proteinasin.jpg" alt="flat mobile devices" class="img-responsive"/>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- section 6 -->
+					<!-- parallax testimonial --> 
+					<section id="paralaxSlice3" data-stellar-background-ratio="0.5">
+						<div class="maskParent">
+							<div class="paralaxMask"></div>
+							<div class="paralaxText container" data-nekoanim="fadeInUp" data-nekodelay="100">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="owl-carousel nekoDataOwl" data-neko_items="1" data-neko_singleitem="true" data-neko_paginationnumbers="true">
+
+											<div class="item">
+												<img src="images/clients/einstein.jpg" class="img-circle mb15" alt="client">
+												<blockquote>Locura es hacer la misma cosa una y otra vez esperando obtener diferentes resultados.<br/><small>Albert Einstein </small></blockquote>
+											</div>
+											<div class="item">
+												<img src="images/clients/zuckerberg.jpg" class="img-circle mb15" alt="client">
+												<blockquote>El mayor riesgo es no correr ningún riesgo. En un mundo que cambia muy rápidamente, la única estrategia que garantiza fallar es no correr riesgos.<br/><small>Marck Zuckerber</small></blockquote>
+											</div>
+											<div class="item">
+												<img src="images/clients/howking.jpg" class="img-circle mb15" alt="client">
+												<blockquote>El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento.<br/><small>Stephen Hawking</small></blockquote>
+											</div>
+											<div class="item">
+												<img src="images/clients/jobs.jpg" class="img-circle mb15" alt="client">
+												<blockquote>Pienso que si haces algo y resulta ser una buena idea, entonces debes hacer otras cosas increíbles, no lo pienses mucho tiempo. Sólo descubre qué es lo que sigue.<br/><small>Steve Jobs</small></blockquote>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- parallax testimonial --> 
 					<!-- icon boxes -->
 					<section class="pt40 pb40" id="services" data-nekoanim="bounceInUp" data-nekodelay="100">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 text-center mb30">
-									<h1>Nuestros Servicios</h1>
+									<h1>Herramientas utilizadas</h1>
 									<h2 class="subTitle">Ejecutamos códigos en pyhton de panera paralela para ejecutar mas rápido sus requerimientos</h2>
 								</div>
 							</div>
@@ -128,90 +278,6 @@
 						</div>
 					</section>
 					<!-- icon boxes -->
-					<!-- section 1 -->
-					<section class="color1">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<img src="images/theme-pics/percolacion.png" alt="paralela 2015" class="img-responsive" />
-								</div>
-								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<h1>PERCOLACIÓN</h1>
-									<p>
-										La percolación es el momento en el cual un material puede llegar desde un extremo a otro, gracias a este concepto de la física/química que se está explotando hoy en día, se logran tener aproximaciones en otros problemas, como por ejemplo, propagación de bacterias, propagación de incendios forestales, cromatización de líquidos, entre varios más.
-									</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- section 1 -->
-					<!-- section 2 -->
-					<section>
-						<div class="container">
-							<div class="row">
-								<div class="col-md-5 pt40 mt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<h1>FASTA</h1>
-									<p>
-										Búsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleótidos.
-									</p>
-								</div>
-								<div class="col-md-6 col-md-offset-1 pt40 pb40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<img src="images/theme-pics/fasta.png" alt="flat mobile devices" class="img-responsive"/>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- section 2 -->
-					<!-- section 3 -->
-					<section class="color1">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-6 pt40" data-nekoanim="fadeInLeftBig" data-nekodelay="100">
-									<img src="images/theme-pics/torah.png" alt="paralela 2015" class="img-responsive" />
-								</div>
-								<div class="col-md-5 col-md-offset-1 pt40 mt40" data-nekoanim="fadeInRightBig" data-nekodelay="100">
-									<h1>TORAH</h1>
-									<p>
-										El código de la Biblia, también conocido como el código de la Torah, consiste en un supuesto código oculto en la Torah judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro. Estos códigos son legibles gracias a unas reglas de codificación que únicamente pueden aplicarse al texto en hebreo antiguo utilizando programas informáticos. El libro El código secreto de la Biblia de Michael Drosnin, publicado en 1997, popularizó ésta teoría.
-									</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- section 3 -->
-					<!-- parallax testimonial --> 
-					<section id="paralaxSlice3" data-stellar-background-ratio="0.5">
-						<div class="maskParent">
-							<div class="paralaxMask"></div>
-							<div class="paralaxText container" data-nekoanim="fadeInUp" data-nekodelay="100">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="owl-carousel nekoDataOwl" data-neko_items="1" data-neko_singleitem="true" data-neko_paginationnumbers="true">
-
-											<div class="item">
-												<img src="images/clients/einstein.jpg" class="img-circle mb15" alt="client">
-												<blockquote>Locura es hacer la misma cosa una y otra vez esperando obtener diferentes resultados.<br/><small>Albert Einstein </small></blockquote>
-											</div>
-											<div class="item">
-												<img src="images/clients/zuckerberg.jpg" class="img-circle mb15" alt="client">
-												<blockquote>El mayor riesgo es no correr ningún riesgo. En un mundo que cambia muy rápidamente, la única estrategia que garantiza fallar es no correr riesgos.<br/><small>Marck Zuckerber</small></blockquote>
-											</div>
-											<div class="item">
-												<img src="images/clients/howking.jpg" class="img-circle mb15" alt="client">
-												<blockquote>El mayor enemigo del conocimiento no es la ignorancia, sino la ilusión del conocimiento.<br/><small>Stephen Hawking</small></blockquote>
-											</div>
-											<div class="item">
-												<img src="images/clients/jobs.jpg" class="img-circle mb15" alt="client">
-												<blockquote>Pienso que si haces algo y resulta ser una buena idea, entonces debes hacer otras cosas increíbles, no lo pienses mucho tiempo. Sólo descubre qué es lo que sigue.<br/><small>Steve Jobs</small></blockquote>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-					<!-- parallax testimonial --> 
 					<!-- services and skills -->
 					<section class="mt30 mb30">
 						<div class="container">

@@ -2,7 +2,7 @@
 	include("simpleql/class.simpleql.php");
 	session_start();
 	require_once("function.php");
-	//EsUsuario();
+	EsUsuario();
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -38,11 +38,11 @@
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel  hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
-									<a href="codigos.php" class="firstLevel hasSubMenu" >Servicios</a>
+									<a href="codigos.php" class="firstLevel active hasSubMenu" >Servicios</a>
 									<ul class="subMenu">
 										<li><a href="enfermedades.php">Enfermedades</a></li>
 										<li><a href="incendios.php">Incendios</a></li>
@@ -55,6 +55,11 @@
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -68,16 +73,13 @@
 			<header class="page-header">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-2 col-sm-2 col-md-1">
-							<a href="javascript:history.go(-1)" class="btn btn-sm btn-inverse"><i class="icon-left-open-mini"></i>back</a>
-						</div>  
 						<div class="col-xs-10 col-sm-10 col-md-11 projectTitle">
-							<h1>Torah</h1>
+							<h1><?= $_SESSION["nombre"]." ".$_SESSION["apellidos"]?></h1>
 							<p>Computación Paralela Primer Semestre 2015</p>
 							<ul class="breadcrumb visible-md visible-lg">
 								<li><a href="index.php">Home</a></li>
 								<li><a href="codigos.php">Codigos</a></li>
-								<li class="active">Torah</li>
+								<li class="active">Implicito</li>
 							</ul>
 						</div>
 					</div>
@@ -88,6 +90,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
+								<h6>NOTA: El documento debe ser formato PDF y su nombre no debe contener espacios ni puntos.</h6>
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<form method="post" action="controlador.php" id="form-pbi" role="form" enctype="multipart/form-data">
@@ -96,7 +99,7 @@
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
-														<input name="documento" type="file">
+														<input name="documento" id="documento" type="file">
 													</div>
 												</div>
 												<div class="col-lg-3">
@@ -104,29 +107,28 @@
 														<label for="name">Salto Maximo</label>
 														<select class="form-control" name="saltos" id="saltos">
 															<option value="">Seleccione un Cantidad</option>
-															<?php for($i=50; $i > 1; $i=$i- 5){?>
+															<?php for($i=450; $i > 1; $i=$i-10){?>
 															<option name= "<?php echo $i; ?>" value = "<?php echo $i; ?>"><?php echo $i;?></option>
 															
 															<?php } ?>
 														</select>
 													</div>
 												</div>
-												<div class="col-lg-3">
+												<div class="col-lg-4">
 													<div class="form-group">
 														<label for="email">Email</label>
-														<input type="email" class="form-control" name="email" id="email" placeholder="Email *">
+														<input type="email" class="form-control" name="email" id="email" value="<?php echo $_SESSION["email"]; ?>" placeholder="Email *">
 													</div>
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
-														<label for="size">Size</label>
-														<input type="text" class="form-control" name="size" id="size" placeholder="">
+														<input type="hidden" class="form-control" name="size" id="size" value="81" placeholder="">
 													</div>
 												</div><br>
 												<div class="row">
 													<div class="col-lg-12">
 														<div class="form-group">
-															<button class="btn btn-succes" type="submit" name="submitComment">Enviar</button>
+															<button class="btn btn-succes" id="enviar" type="submit" name="submitComment">Enviar</button>
 														</div>
 													</div>
 												</div>
@@ -141,13 +143,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<img src="images/portfolio/biblia.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
+							<img src="images/portfolio/implicita.jpg" alt="SEATTLE premium website template" class="img-responsive mb30"/>
 						</div>
 						<div class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 col-sm-4">
-									<h1>Torah</h1>
-									<p> Mediante el análisis de patrones del documento otorgado, ya sea de forma implícita o mediante el ingreso de un patrón determinado (explicita), se intenta obtener determinados mensajes ocultos que posean una doble finalidad de carácter subliminal.</p>
+									<h1> Búsqueda Implícita de Patrones</h1>
+									<p> Este algoritmo no tiene ingreso de palabras, ya que su búsqueda se sustenta en una base de conocimiento; sin embargo, el único dato de entrada de éste algoritmo es el archivo pdf.  Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.</p>
 								</div>
 								<div class="col-md-12 col-sm-4">
 									<h2>Integrantes</h2>
@@ -173,5 +175,45 @@
 	<!-- End Document 
 	================================================== -->
 	<?php require_once("js.php"); ?>
+	<script type="text/javascript">
+		$("#form-pbi").validate({
+	           rules: {
+	                email: { 
+	                 	required: true,
+      					email: true
+	                } ,
+	                saltos: { 
+	                 	required: true
+	                } ,
+	                documento: { 
+	                 	required: true
+	                } ,
+
+
+	           },
+	     messages:{
+	        email: { 
+	                 required:"Debe escribir un correo correcto"
+	               },
+           saltos: { 
+             		required:"Campo requerido"
+           			},
+           	documento: { 
+             		required:"Campo requerido"
+           			},
+	     }
+	     });
+		$("#enviar").click(function(){
+	       var validado = $("#form-pfa").valid();
+	       console.log(validado);
+	       if(validado){
+	       		$.get( "exito.php", function( data ) {
+						  $("#solicitud").html(data);
+						});
+	       }
+	    });
+
+
+	</script>
 </body>
 </html>

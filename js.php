@@ -26,3 +26,5 @@
 <script type="text/javascript" src="/webParalela/js-plugin/appear/jquery.appear.js"></script>
 <!-- Custom  -->
 <script type="text/javascript" src="/webParalela/js/custom.js"></script>
+<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>

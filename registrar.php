@@ -170,7 +170,8 @@ if($_POST){
 	           },
 	     messages:{
 	        password: { 
-	                 required:"El Password es Requerido"
+	                 required:"El Password es Requerido",
+	                 minlength: "Debe contener a lo menos 6 caracteres"
 
 	               },
 	        nombre: { 
@@ -184,6 +185,9 @@ if($_POST){
 
 	        email: { 
 	                 required:"Debe escribir un correo correcto"
+	               },
+	        c_password: { 
+	                 equalTo:"Las contraseñas deben coincidir"
 	               }
 
 

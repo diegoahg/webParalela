@@ -41,11 +41,11 @@
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel  hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
-									<a href="codigos.php" class="firstLevel hasSubMenu" >Servicios</a>
+									<a href="codigos.php" class="firstLevel active hasSubMenu" >Servicios</a>
 									<ul class="subMenu">
 										<li><a href="enfermedades.php">Enfermedades</a></li>
 										<li><a href="incendios.php">Incendios</a></li>
@@ -58,6 +58,11 @@
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
 								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
+								<?php
+								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
+								}
+								?>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -72,7 +77,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>Codigos</h1>
+							<h1><?= $_SESSION["nombre"]." ".$_SESSION["apellidos"]?></h1>
 							<p>Computación Paralela Primer Semestre 2015</p>
 							
 							<ul class="breadcrumb visible-md visible-lg">
@@ -84,26 +89,26 @@
 				</div>
 			</header>
 			<section id="content">
-				<section class="pt30 pb30"> 
+				<section class="pt30 pb30">
 					<div class="container clearfix">
 						<div class="row">
 							<div class="portfolio-items  isotopeWrapper clearfix imgHover" id="3">
 								<!-- portfolio item -->
 								<article class="col-sm-4 isotopeItem women">
 									<div class="pinBox">
-										<img alt="" src="images/portfolio/percolacion.png" class="img-responsive">
+										<img alt="" src="images/portfolio/forestal.jpg" class="img-responsive">
 										<div class="mediaHover">
 											<div class="mask"></div>
-											<div class="iconLinks"> 
-												<a href="percolacion.php" title="link">
+											<div class="iconLinks">
+												<a href="incendios.php" title="link">
 													<i class="icon-link iconRounded iconMedium"></i>
 													<span>link</span>
 												</a>
 											</div>
 										</div>
 										<section class="boxContent">
-											<h3>Percolación</h3>
-											<p> La percolación se refiere al paso lento de fluidos a través de materiales porosos. Ejemplos de este proceso son la filtración y la lixiviación. <br />
+											<h3>Incendios Forestales</h3>
+											<p> Por medio de este servicio, simularemos un incendio forestal. Es necesario que se ingrese el tipo de árbol y de suelo, el tamaño de la región y la distribución de los arboles.  <br>Ademas se realizan repeticiones que aseguran un error máximo de 5% de respuesta. Los resultados serán enviados a su correo electrónico por medio de un documento formato PDF.<br />
 												<!--<a href="percolacion.php" class="moreLink">&rarr; read more</a>-->
 											</p>
 										</section>
@@ -113,19 +118,19 @@
 								<!-- portfolio item -->
 								<article class="col-sm-4 isotopeItem cats">
 									<div class="pinBox">
-										<img alt="" src="images/portfolio/fasta.png" class="img-responsive">
+										<img alt="" src="images/portfolio/enfermedades.jpg" class="img-responsive">
 										<div class="mediaHover">
 											<div class="mask"></div>
-											<div class="iconLinks"> 
-												<a href="fasta.php" title="link" class="portfolioSheet sizer">
+											<div class="iconLinks">
+												<a href="enfermedades.php" title="link" class="portfolioSheet sizer">
 													<i class="icon-link iconRounded iconMedium"></i>
 													<span>link</span>
 												</a>
-											</div>   
+											</div>
 										</div>
 										<section class="boxContent">
-											<h3>Fasta</h3>
-											<p> El paquete actual de FASTA incluye programas para búsquedas del tipo proteína/proteína, ADN/ADN, proteína/ADN traducido (con cambios del marco de lectura), y búsqueda ordenada y desordenadas de péptidos. Las versiones recientes incluyen un algoritmo para manejar errores de desplazamiento del marco de lectura, las cuales las búsquedas que traducen los seis marcos suelen tener problemas) cuando compara datos de secuencia de proteínas con los nucleotidos. <br>
+											<h3> Propagación de Enfermedades</h3>
+											<p> A través de modelo simple de propagación de enfermedades basado en el concepto de umbral de percolación, se realizara una simulacion de las probabilidad de contagio que tendrian algunas enfermedades, como por ejemplo: gripe, AH1N1, sarampion, etc. Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.<br>
 												<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a> </p>-->
 											</section>
 										</div>
@@ -134,19 +139,85 @@
 									<!-- portfolio item -->
 									<article class="col-sm-4 isotopeItem graphics">
 										<div class="pinBox">
-											<img alt="" src="images/portfolio/torah.png" class="img-responsive">
+											<img alt="" src="images/portfolio/explicita.jpg" class="img-responsive">
 											<div class="mediaHover">
 												<div class="mask"></div>
-												<div class="iconLinks"> 
-													<a href="biblia.php" title="link">
+												<div class="iconLinks">
+													<a href="explicito.php" title="link">
 														<i class="icon-link iconRounded iconMedium"></i>
 														<span>link</span>
 													</a>
 												</div>
 											</div>
 											<section class="boxContent">
-												<h3>Torah</h3>
-												<p> El código de la Biblia, también conocido como el código de la Torá, consiste en un supuesto código oculto en la Torá judía (el Pentateuco del Antiguo testamento) que relata acontecimientos del pasado, presente y futuro.<br>
+												<h3> Búsqueda Explicita de Patrones</h3>
+												<p> Por medio de esta plataforma, usted podrá realizar búsquedas de palabras en los libros de nuestra biblioteca, cabe mencionar que esta búsqueda tiene la particularidad de buscar a través de saltos, es decir, en letras que no estén contiguas, sino que estén separadas.  Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.<br>
+													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
+												</p>
+											</section>
+										</div>
+									</article>
+									<!-- portfolio item -->
+									<!-- portfolio item -->
+									<article class="col-sm-4 isotopeItem graphics">
+										<div class="pinBox">
+											<img alt="" src="images/portfolio/implicita.jpg" class="img-responsive">
+											<div class="mediaHover">
+												<div class="mask"></div>
+												<div class="iconLinks">
+													<a href="implicito.php" title="link">
+														<i class="icon-link iconRounded iconMedium"></i>
+														<span>link</span>
+													</a>
+												</div>
+											</div>
+											<section class="boxContent">
+												<h3> Búsqueda Implícita de Patrones</h3>
+												<p> Este algoritmo no tiene ingreso de palabras, ya que su búsqueda se sustenta en una base de conocimiento; sin embargo, el único dato de entrada de éste algoritmo es el archivo pdf.  Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.<br>
+													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
+												</p>
+											</section>
+										</div>
+									</article>
+									<!-- portfolio item -->
+									<!-- portfolio item -->
+									<article class="col-sm-4 isotopeItem graphics">
+										<div class="pinBox">
+											<img alt="" src="images/portfolio/adn.jpg" class="img-responsive">
+											<div class="mediaHover">
+												<div class="mask"></div>
+												<div class="iconLinks">
+													<a href="adn.php" title="link">
+														<i class="icon-link iconRounded iconMedium"></i>
+														<span>link</span>
+													</a>
+												</div>
+											</div>
+											<section class="boxContent">
+												<h3> Comparacion de Cadenas de ADN</h3>
+												<p> El algoritmo FASTA es un método heurístico para comparación de cadenas donde compara una cadena de consulta con una cadena de un solo texto. Cuando buscamos en una base de datos entera coincidencias para una consulta dada, comparamos la consulta usando el algoritmo FASTA para cada cadena en la base de datos. Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.<br>
+													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
+												</p>
+											</section>
+										</div>
+									</article>
+									<!-- portfolio item -->
+									<!-- portfolio item -->
+									<article class="col-sm-4 isotopeItem graphics">
+										<div class="pinBox">
+											<img alt="" src="images/portfolio/proteinas.jpg" class="img-responsive">
+											<div class="mediaHover">
+												<div class="mask"></div>
+												<div class="iconLinks">
+													<a href="proteinas.php" title="link">
+														<i class="icon-link iconRounded iconMedium"></i>
+														<span>link</span>
+													</a>
+												</div>
+											</div>
+											<section class="boxContent">
+												<h3> Comparacion de Cadenas de Proteinas</h3>
+												<p> Un alineamiento de secuencias en bioinformática es una forma de representar y comparar dos o más secuencias o cadenas de estructuras primarias proteicas para resaltar sus zonas de similitud, que podrían indicar relaciones funcionales o evolutivas entre los genes o proteínas consultados. Los resultados serán enviados a su correo electrónico por medio de un documento formato  PDF.<br>
 													<!--<a href="portfolio-project-fullwidth-video.html" class="moreLink">&rarr; read more</a>-->
 												</p>
 											</section>

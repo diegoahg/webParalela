@@ -43,4 +43,5 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="/webParalela/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/webParalela/images/apple-touch-icon-114x114.png">
 	<link rel="apple-touch-icon" sizes="144x144" href="/webParalela/images/apple-touch-icon-144x144.png">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css">
 </head>
