@@ -90,7 +90,6 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-								<h6>NOTA: El documento debe ser formato PDF y su nombre no debe contener espacios ni puntos.</h6>
 									<div class="ctaBox ctaBox2Cols color2">
 										<div class="col-lg-12">
 											<form method="post" action="controlador.php" id="form-pbi" role="form" enctype="multipart/form-data">
@@ -99,15 +98,18 @@
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
-														<input name="documento" id="documento" type="file">
+														<input name="documento" id="documento" type="file" accept="application/pdf">
 													</div>
+												</div>
+												<div class="col-lg-12">
+													<h6><font color="white"><b>NOTA:</b> El documento debe ser formato PDF y su nombre no debe contener espacios ni puntos.</font></h6>
 												</div>
 												<div class="col-lg-3">
 													<div class="form-group">
 														<label for="name">Salto Maximo</label>
 														<select class="form-control" name="saltos" id="saltos">
 															<option value="">Seleccione un Cantidad</option>
-															<?php for($i=450; $i > 1; $i=$i-10){?>
+															<?php for($i=480; $i >= 80; $i=$i-80){?>
 															<option name= "<?php echo $i; ?>" value = "<?php echo $i; ?>"><?php echo $i;?></option>
 															
 															<?php } ?>

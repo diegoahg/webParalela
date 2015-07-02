@@ -35,7 +35,7 @@ switch($_POST["algoritmo"]){
 					);
 		$result = $simpleql->inserTable("historial_percolacion", $arreglo);
 		//var_dump($result);
-		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salidap1 2> /tmp/salidap1.errores &');
 		break;
 	case "-ppe":
 		$output = "pe".date("Ymshis");
@@ -56,7 +56,7 @@ switch($_POST["algoritmo"]){
 					);
 		$result = $simpleql->inserTable("historial_percolacion", $arreglo);
 		//var_dump($result);
-		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salidap2 2> /tmp/salidap2.errores &');
 		break;
 	case "-pfa":
 		$uploaddir = '/var/www/html/webParalela/FASTA/';
@@ -65,7 +65,7 @@ switch($_POST["algoritmo"]){
 		if (move_uploaded_file($_FILES['documento']['tmp_name'], $uploadfile)) {
 			$output = "FastaADN".date("Ymshis");
 			//echo $output."<br>";
-		    $archivo = $uploadfile;
+		    $archivo = basename($_FILES['documento']['name']);
 		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo.py ".$archivo." matlist.".$_POST['matriz']." ".$_POST['penalizacion']." ".$_POST['resultado']." ".$_POST['email']." ".$output;
 			$simpleql = new Mysql();
 			$arreglo = array('id_usuario' => addslashes($_SESSION["id"]),
@@ -78,7 +78,7 @@ switch($_POST["algoritmo"]){
 						);
 			$result = $simpleql->inserTable("historial_fasta", $arreglo);
 			    //echo "<br>[".$comando."]<br>";
-		    exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		    exec($comando . ' > /tmp/salidaf1 2> /tmp/salidaf1.errores &');
 		} else {
 		    echo "¡Posible ataque de carga de archivos!\n";
 		    exit(0);
@@ -95,8 +95,8 @@ switch($_POST["algoritmo"]){
 		if (move_uploaded_file($_FILES['documento']['tmp_name'], $uploadfile)) {
 			$output = "FastaPRO".date("Ymshis");
 			//echo $output."<br>";
-		    $archivo = $uploadfile;
-		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo_prote.py ".$archivo." matlist.".$_POST['matriz']." ".$_POST['penalizacion']." ".$_POST['resultado']." ".$_POST['email']." ".$output;
+		    $archivo = basename($_FILES['documento']['name']);
+		    $comando = "sudo -u paralela /usr/bin/mpirun -np ".$_POST["size"]." --hostfile /home/hostfile python /mpi/FASTA/paralelo_prote_new.py ".$archivo." matlist.".$_POST['matriz']." ".$_POST['penalizacion']." ".$_POST['resultado']." ".$_POST['email']." ".$output;
 		    //echo "<br>[".$comando."]<br>";
 			$simpleql = new Mysql();
 			$arreglo = array('id_usuario' => addslashes($_SESSION["id"]),
@@ -108,7 +108,7 @@ switch($_POST["algoritmo"]){
 						'tipo' => "-pfp"
 						);
 			$result = $simpleql->inserTable("historial_fasta", $arreglo);
-		    exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		   exec($comando . ' > /tmp/salidaf2 2> /tmp/salidaf2.errores &');
 		} else {
 		    echo "¡Posible ataque de carga de archivos!\n";
 		    exit(0);
@@ -146,7 +146,7 @@ switch($_POST["algoritmo"]){
 					'tipo' => "-pbi"
 					);
 		$result = $simpleql->inserTable("historial_torah", $arreglo);
-		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salidab1 2> /tmp/salidab1.errores &');
 		//echo "<h3> Se ha enviado al correo </h3><b>". $_POST['email']."</b> la busqueda Implicita. <h3>Se adjunta documento pdf con estadisticas encontradas. Saludos.</h3>";
 		//echo "\n<a href='biblia.php'>Regresar</a>";
 		//
@@ -180,7 +180,7 @@ switch($_POST["algoritmo"]){
 		$result = $simpleql->inserTable("historial_torah", $arreglo);
 		//var_export(getcwd());
 		//var_export($comando);
-		exec($comando . ' > /tmp/salida 2> /tmp/salida.errores &');
+		exec($comando . ' > /tmp/salidab2 2> /tmp/salidab2.errores &');
 		//echo "<h3> Se ha enviado al correo </h3><b>". $_POST['email']."</b> la busqueda Explicita. <h3>Se adjunta documento pdf con estadisticas encontradas. Saludos.</h3>";
 		//echo "\n<a href='biblia.php'>Regresar</a>";
 		//

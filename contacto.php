@@ -1,12 +1,3 @@
-<?php
-	error_reporting(E_ALL);
-	ini_set('display_errors','on');	
-	include("simpleql/class.simpleql.php");
-	session_start();
-	//require_once("function.php");
-	//EsUsuario();
-
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -41,7 +32,7 @@
 							<!-- Main navigation -->
 							<ul class="nav navbar-nav pull-right">
 								<li class="primary">
-									<a href="index.php" class="firstLevel  hasSubMenu" >Home</a>
+									<a href="index.php" class="firstLevel active hasSubMenu" >Home</a>
 								</li>
 								<li class="sep"></li>
 								<li class="primary"> 
@@ -57,12 +48,7 @@
 								</li>
 								<li class="sep"></li>
 								<li id="lastMenu" class="last"><a href="resultados.php" class="firstLevel last">Resultados</a></li>
-								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel active last">Contacto</a></li>
-								<?php
-								if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
-									echo '<li id="lastMenu" class="last"><a href="logout.php" class="firstLevel last">LogOut</a></li>';
-								}
-								?>
+								<li id="lastMenu" class="last"><a href="contacto.php" class="firstLevel last">Contacto</a></li>
 							</ul>
 							<!-- End main navigation -->
 						</div>
@@ -96,25 +82,25 @@
 								(56-2) 787 7211<br/>
 							</address>
 						</div>
-						<form method="post" action="js-plugin/neko-contact-ajax-plugin/php/form-handler.php" id="contactfrm" role="form">
+						<form method="post" action="sendmail.php" id="contactfrm" role="form">
 							<div class="col-sm-4"> 
 								<div class="form-group">
 									<label for="name">Nombre</label>
-									<input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su nombre"  title="Ingrese su nombre (con al menos 2 letras)"/>
+									<input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Ingrese su nombre"  title="Ingrese su nombre (con al menos 2 letras)"/>
 								</div>
 								<div class="form-group">
 									<label for="email">Correo electrónico</label>
-									<input type="email" class="form-control" name="email" id="email" placeholder="ingrese su correo" title="Por favor ingresar una dirrección de correo válida"/>
+									<input type="email" class="form-control" name="Email" id="Email" placeholder="ingrese su correo" title="Por favor ingresar una dirrección de correo válida"/>
 								</div>
 								<div class="form-group">
-									<label for="phone">Teléfono</label>
-									<input name="phone" class="form-control required digits" type="tel" id="phone" size="30" value="" placeholder="Ingrese su número telefónico" title="Por favor ingrese un número de teléfono válido (al menos 10 caracteres)">
+									<label for="Telefono">Teléfono</label>
+									<input name="Telefono" class="form-control required digits" type="tel" id="Telefono" size="30" value="" placeholder="Ingrese su número telefónico" title="Por favor ingrese un número de teléfono válido (al menos 10 caracteres)">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
 									<label for="comments">Comentarios</label>
-									<textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Ingrese su mensaje…" title="Por favor ingrese su mensaje (at least 10 characters)"></textarea>
+									<textarea name="Mensaje" class="form-control" id="Mensaje" cols="3" rows="5" placeholder="Ingrese su mensaje…" title="Por favor ingrese su mensaje (at least 10 characters)"></textarea>
 								</div>
 							</div>                        
 							<div class="col-md-8 col-md-offset-4">

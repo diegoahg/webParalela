@@ -99,7 +99,7 @@
 												<div class="col-lg-12">
 													<div class="form-group">
 														<label for="tipoArbol">Subir Archivo</label>
-														<input name="documento" id="documento" type="file" require>
+														<input name="documento" id="documento" type="file" require accept=".fasta">
 													</div>
 												</div>
 												<div class="col-lg-4">
@@ -220,7 +220,9 @@
 	                } ,
 	                resultado: { 
 	                 	required: true,
-	                 	number: true
+	                 	number: true,
+	                 	range: [1,10],
+      					digits: true
 	                } ,
 	                documento: { 
 	                 	required: true
@@ -242,7 +244,9 @@
            			},
            	resultado: { 
              		required:"Campo requerido",
-             		number: "Ingresar solo numeros enteros"
+             		number: "Ingresar solo numeros enteros",
+             		range: "El rango debe ser entre 1 y 10",
+      				digits: "Debe ser Dígitos"
            			},
            	documento:  "Ingrese un archivo fasta"
 	     }

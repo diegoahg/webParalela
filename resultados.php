@@ -135,7 +135,7 @@
 												<td>Cadenas ADN</td>
 												<td>'.$fasta_a["size"].'</td>
 												<td>'.$fasta_a["fecha"].'</td>
-												<td class="center"><a href="/webParalela/FASTA/'.$fasta_a["documento"].'.pdf" target="_blank">'.$fasta_a["documento"].'</a></td>
+												<td class="center"><a href="/webParalela/FASTA/Envio/'.$fasta_a["documento"].'.pdf" target="_blank">'.$fasta_a["documento"].'</a></td>
 												<td class="center">
 													<button type="button" class="btn btn-primary btn-sm" onclick="Detalle('.$fasta_a["fasta_id"].',1);">
 												  	Detalle
@@ -150,7 +150,7 @@
 												<td>Proteinas</td>
 												<td>'.$fasta_p["size"].'</td>
 												<td>'.$fasta_p["fecha"].'</td>
-												<td class="center"><a href="/webParalela/FASTA/'.$fasta_p["documento"].'.pdf" target="_blank">'.$fasta_p["documento"].'</a></td>
+												<td class="center"><a href="/webParalela/FASTA/Envio/'.$fasta_p["documento"].'.pdf" target="_blank">'.$fasta_p["documento"].'</a></td>
 												<td class="center">
 													<button type="button" class="btn btn-primary btn-sm" onclick="Detalle('.$fasta_p["fasta_id"].',2);">
 												  	Detalle
